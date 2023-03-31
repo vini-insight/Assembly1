@@ -46,13 +46,20 @@ A instrução LDR carrega um registrador com um valor da memória.
 
     LDR Rd, [Rn, Rm]
     
-Onde, Rd especifica o registro a ser carregado ou armazenado. Rn especifica o registro no qual o endereço de memória é baseado. Rm especifica o registro que contém um valor a ser usado como deslocamento
+Onde, Rd especifica o registro a ser carregado. Rn especifica o registro no qual o endereço de memória é baseado. Rm especifica o registro que contém um valor a ser usado como deslocamento
 
+
+## STR
+A instrução STR armazenam um valor de registro na memória.
+
+    LDR Rd, [Rn, Rm]
+    
+Onde, Rd especifica o registro a ser armazenam. Rn especifica o registro no qual o endereço de memória é baseado. Rm especifica o registro que contém um valor a ser usado como deslocamento
 
     
 
 
-
+##
 
 
 
