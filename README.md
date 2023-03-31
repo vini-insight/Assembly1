@@ -23,7 +23,7 @@ Arquitetura do computador usado nos testes;
     pop
     svc
 
-# ADD
+## ADD
 ADD é uma instrução que executa a soma de valores que estão em registradores ou denifidos de forma imediata. Pode ser executada como:
 
 ADD Rdestino, Rtermo1, Rtermo2
