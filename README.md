@@ -72,8 +72,13 @@ A instrução CMP comparam o valor em um registrador. A sintaxe é:
 
 Onde, cond é um código de condição opcional. Rn é o registrador ARM contendo o primeiro operando. Operand2 é um segundo registrador. #valorImediato é qualquer valor no intervalo 0-255.
 
+## B
 
+A instrução B causa um desvio incondiciona para o rótulo criado. A sintaxe é:
 
+     B label
+     
+Onde, label é um rótulo criadoi para marcar onde o programa continuará a execução depois do desvio.
 
 
 
