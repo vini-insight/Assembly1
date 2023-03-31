@@ -78,8 +78,17 @@ A instrução B causa um desvio incondiciona para o rótulo criado. A sintaxe é
 
      B label
      
-Onde, label é um rótulo criadoi para marcar onde o programa continuará a execução depois do desvio.
+Onde, label é um rótulo criado para marcar onde o programa continuará a execução depois do desvio.
 
+
+
+## BL
+
+A instrução BL faz com que um desvio seja rotulado e copia o endereço da próxima instrução em LR (R14, o registrador de link). A sintaxe é:
+
+     BL label
+     
+Onde, label é um rótulo criado para marcar onde o programa continuará a execução depois do desvio.
 
 
 ## PBL
