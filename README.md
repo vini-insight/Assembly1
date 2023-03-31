@@ -41,6 +41,14 @@ A instrução MOV copia o valor de Operand2 em Rd.
     
 Onde, Rd é o registrador de destino. Operand2 é um segundo operando e #valorImediato é qualquer valor no intervalo 0-65535.
 
+## LDR
+A instrução LDR carrega um registrador com um valor da memória.
+
+    LDR Rd, [Rn, Rm]
+    
+Onde, Rd especifica o registro a ser carregado ou armazenado. Rn especifica o registro no qual o endereço de memória é baseado. Rm especifica o registro que contém um valor a ser usado como deslocamento
+
+
     
 
 
