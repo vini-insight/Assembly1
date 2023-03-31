@@ -34,9 +34,11 @@ Onde, Rdestino é o registrador de destino. Rtermo1 é o registrador que contém
 
 ## MOV
 A instrução MOV copia o valor de Operand2 em Rd.
+
     MOV Rd, Operand2
     ou
     MOV Rd, #valorImediato
+    
 Onde, Rd é o registrador de destino. Operand2 é um segundo operando e #valorImediato é qualquer valor no intervalo 0-65535.
 
     
