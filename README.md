@@ -74,7 +74,7 @@ Onde, cond é um código de condição opcional. Rn é o registrador ARM contend
 
 ## B
 
-A instrução B causa um desvio incondiciona para o rótulo criado. A sintaxe é:
+A instrução B causa um desvio incondicional para o rótulo criado. A sintaxe é:
 
      B label
      
@@ -84,11 +84,20 @@ Onde, label é um rótulo criado para marcar onde o programa continuará a execu
 
 ## BL
 
-A instrução BL faz com que um desvio seja rotulado e copia o endereço da próxima instrução em LR (R14, o registrador de link). A sintaxe é:
+A instrução BL faz com que um desvio incondicional seja rotulado e copia o endereço da próxima instrução em LR (R14, o registrador de link). A sintaxe é:
 
      BL label
      
 Onde, label é um rótulo criado para marcar onde o programa continuará a execução depois do desvio.
+
+
+## BGT
+
+A instrução BGT causa um desvio condicional para o rótulo criado. A sintaxe é:
+
+     B{cond} label
+     
+Onde, label é um rótulo criado para marcar onde o programa continuará a execução depois do desvio. GT (greater than) significa maior que. Desvia se o vaor do primeiro registrador for maior do que o valor do segundo registrador.
 
 
 ## PBL
