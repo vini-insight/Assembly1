@@ -2,11 +2,11 @@
 
 ## Tópicos
 
-:small_blue_diamond: [Descrição do projeto](#descrição-do-projeto-e-requisitos)
+:small_blue_diamond: [Descrição do Projeto](#descrição-do-projeto-e-requisitos)
 
 :small_blue_diamond: [Ambiente de Desenvolvimento](#ambiente-de-desenvolvimento)
 
-:small_blue_diamond: [Ambiente de execução](#instalação-configuração-de-ambiente-e-execução)
+:small_blue_diamond: [Ambiente de Execução](#instalação-configuração-de-ambiente-e-execução)
 
 :small_blue_diamond: [Testes e Resultados](#testes-e-resultados)
 
@@ -40,7 +40,7 @@ O código deve ser escrito em Assembly, permitindo configurar o tempo de contage
 
 ### Arquitetura do computador
 
-Os computadores utilizados para desenvolvimento e testes foram os presentes no laboratório (nome????).
+Os computadores utilizados para desenvolvimento e testes foram os presentes no LEDS.
 
 ## Instalação, configuração de ambiente e execução
 
