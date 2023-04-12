@@ -8,6 +8,8 @@
 
 :small_blue_diamond: [Ambiente de Execução](#instalação-configuração-de-ambiente-e-execução)
 
+:small_blue_diamond: [Funcionamento](#funcionamento)
+
 :small_blue_diamond: [Testes e Resultados](#testes-e-resultados)
 
 :small_blue_diamond: [Desenvolvedores](#desenvolvedores)
@@ -36,7 +38,7 @@ O código deve ser escrito em Assembly, permitindo configurar o tempo de contage
 
 ### Softwares utilizados para desenvolvimento e testes
 
-<>
+A solução foi desenvolvida utilizando de editores de texto. Seja direto na placa ou o disponibilizado pelo próprio sistema operacional.
 
 ### Arquitetura do computador
 
@@ -264,6 +266,32 @@ BX é uma instrução de salto que alterna o processador para executar código e
 Onde, Rfonte é o registrador que contém o endereço de memória para o qual o processador deve saltar.
 
 A instrução BX alterna o processador para executar código em um endereço de memória especificado pelo valor do registrador Rfonte. Isso é útil para implementar saltos para funções em código de assembly.
+
+### Mapeamento de Pinos
+
+Esta seção apresenta o mapeamento dos pinos de entrada/saída (GPIO) com as conexões do display utilizado no projeto. O mapeamento é essencial para garantir a correta comunicação entre o microcontrolador da GPIO e o display, possibilitando o correto funcionamento da interface de usuário.
+
+#### Mapeamento dos Pinos da GPIO para o DISPLAY
+
+O mapeamento entre a GPIO e o display LCD 16x2 no modo 4 bits é feito por meio da conexão de 7 pinos do microcontrolador com 7 pinos do display. Esses 7 pinos são divididos em 4 bits de dados e 3 bits de controle.
+
+Os 4 bits de dados (D4 a D7) são responsáveis por enviar as informações que serão exibidas no display. Já os 3 bits de controle (RS, E e RW) são responsáveis por indicar ao display qual informação está sendo enviada (dados ou instruções), quando uma nova informação deve ser lida (sinal de enable) e se a operação será de escrita ou leitura (neste caso, o bit RW é configurado como leitura ou escrita).Neste contexto, o bit referente ao RW é sempre setado como escrita.
+
+Para o mapeamento, são utilizados os pinos GPIO do microcontrolador, que são configurados como saídas e conectados aos pinos correspondentes no display.
+
+O mapeamento apresentado na tabela abaixo é realizado por meio da identificação dos pinos do microcontrolador que serão utilizados e a correspondência com os pinos do display.
+
+        | GPIO | DISPLAY |
+        |------|---------|
+        | 40   | D7      |
+        | 38   | D6      |
+        | 36   | D5      |
+        | 32   | D4      |
+        | 28   | E       |
+        | 22   | RS      |
+        | 20   | GND(RW) |
+
+Os pinos do microcontrolador estão conectados aos pinos correspondentes do display para que seja possível exibir as informações corretamente.
 
 ## Testes e Resultados
 
