@@ -8,7 +8,7 @@ Script de compilação tipo Makefile para geração do código executável;
 Detalhamento dos software usados no trabalho, incluindo softwares básicos;
 Arquitetura do computador usado nos testes;
 
-### Descrição dos tipos de instruções utilizadas;
+### Lista das instruções utilizadas no projeto 
 
     - ADD                   - B                     - POP                   - BIC
     - MOV                   - BL                    - SUB                   - ORR
