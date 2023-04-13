@@ -10,26 +10,11 @@ Arquitetura do computador usado nos testes;
 
 ### Descrição dos tipos de instruções utilizadas;
 
-    - ADD                   - B
-    - MOV                   - BL
-    - LDR                   - BGT
-    - STR                   - SVC
-    - CMP                   - PUSH
-    - B
-    - BL
-    - BGT
-    - SVC
-    - PUSH
-    - POP
-    - SUB
-    - AND
-    - LSL
-    - LSR
-    - BIC
-    - ORR
-    - BEQ
-    - BLT
-    - BX    
+    - ADD                   - B                     - POP                   - BIC
+    - MOV                   - BL                    - SUB                   - ORR
+    - LDR                   - BGT                   - AND                   - BEQ
+    - STR                   - SVC                   - LSL                   - BLT
+    - CMP                   - PUSH                  - LSR                   - BX
     
 
 ## ADD
