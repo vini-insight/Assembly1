@@ -100,7 +100,7 @@ A instrução BGT causa um desvio condicional para o rótulo criado. A sintaxe �
 Onde, label é um rótulo criado para marcar onde o programa continuará a execução depois do desvio. GT (greater than) significa maior que. Desvia se o vaor do primeiro registrador for maior do que o valor do segundo registrador.
 
 
-#### svc
+# svc
 
 A instrução SVC (Supervisor Call) é uma instrução usada em sistemas operacionais para fazer chamadas do sistema. A sintaxe é:
 
