@@ -17,7 +17,7 @@ Arquitetura do computador usado nos testes;
     - STR                   - BGT                   - SUB                   - BIC                   - BX
     
 
-### Descrição dos tipos de instruções utilizadas
+### Descrição das instruções
 
 ## ADD
 
