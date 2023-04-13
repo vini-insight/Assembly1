@@ -15,15 +15,15 @@ _start:
         b pressButton
 
 pressButton:
-        GPIOPinState b1
-        CMP R1, #0  @ verifica se o botao de reset foi pressionado
-        BEQ loop
-        b pressButton
+        GPIOPinState b1 @ verifica se o botao de INICIAR foi pressionado (pressiona uma vez e solta para iniciar contagem)
+        CMP R1, #0
+        BEQ loop @ se foi pressionado desvia para loop
+        b pressButton @ caso contrário fica volta para inicio da label pressButton e fica nesse loop até botão INICIAR ser pressionado
 
 loop:
-        GPIOPinState b2
+        GPIOPinState b2 @ verifica se o botao de PAUSAR foi pressionado (enquanto botão PAUSAR estiver pressionado ele a contagem fica parada)
 	CMP R1, #0
-	BEQ pausar
+	BEQ pausar se foi pressionado desvia para PAUSAR, caso contrário continua execução nas linhas abaixo e seguintes
         clear_lcd
         write_lcd R10
         sleep_by one_second, zero_mili_second
@@ -32,6 +32,10 @@ loop:
         BNE loop
         gpio_pin_low PA8
         b exit
+	
+pausar:
+	sleep_by one_second, zero_mili_second @ aguarda um segundo e desvia 
+	b loop
 
 exit:
         mov r7, #1
