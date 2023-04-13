@@ -1,12 +1,65 @@
-# Assembly1
-Assembly1
+# Problema #1 – 2023.1 Linguagem Assembly
 
+## Tópicos
 
-Produto
-códigos detalhadamente comentados;
-Script de compilação tipo Makefile para geração do código executável;
-Detalhamento dos software usados no trabalho, incluindo softwares básicos;
-Arquitetura do computador usado nos testes;
+:small_blue_diamond: [Descrição do Projeto](#descrição-do-projeto-e-requisitos)
+
+:small_blue_diamond: [Ambiente de Desenvolvimento](#ambiente-de-desenvolvimento)
+
+:small_blue_diamond: [Ambiente de Execução](#instalação-configuração-de-ambiente-e-execução)
+
+:small_blue_diamond: [Funcionamento](#funcionamento)
+
+:small_blue_diamond: [Testes e Resultados](#testes-e-resultados)
+
+:small_blue_diamond: [Desenvolvedores](#desenvolvedores)
+
+## Conteúdo
+
+:heavy_check_mark: Códigos detalhadamente comentados;
+
+:heavy_check_mark: Script de compilação tipo Makefile para geração do código executável;
+
+:heavy_check_mark: Detalhamento dos software usados no trabalho, incluindo softwares básicos;
+
+:heavy_check_mark: Arquitetura do computador usado nos testes.
+
+## Descrição do Projeto e Requisitos
+
+Este projeto consiste em uma solução desenvolvida em Assembly para a Orange Pi PC Plus.
+
+O objetivo é desenvolver um aplicativo de temporização (timer) que apresente a contagem num display LCD 16x2. O tempo inicial deverá ser configurado diretamente no código. Além disso, deverão ser usados 2 botões de controle: 1 para iniciar/parar a contagem e outro para reiniciar a partir do tempo definido.
+
+Com o objetivo de desenvolver uma biblioteca para uso futuro em conjunto com um programa em linguagem C, a função para enviar mensagem para o display deve estar separada como uma biblioteca (.o), e permitir no mínimo as seguinte operações: Limpar display; Escrever caractere; Posicionar cursor (linha e coluna).
+
+O código deve ser escrito em Assembly, permitindo configurar o tempo de contagem e usando botões para controlar início/parada e reinício do temporizador.
+
+## Ambiente de desenvolvimento
+
+### Softwares utilizados para desenvolvimento e testes
+
+A solução foi desenvolvida utilizando de editores de texto. Seja direto na placa ou o disponibilizado pelo próprio sistema operacional.
+
+### Arquitetura do computador
+
+Os computadores utilizados para desenvolvimento e testes foram os presentes no LEDS.
+
+## Instalação, configuração de ambiente e execução
+
+<>
+
+## Execução e Testes
+
+Para testar o sistema, basta compilar o código e executá-lo na Orange Pi. É possível usar um osciloscópio ou multímetro para verificar o funcionamento correto dos botões e da contagem de tempo.
+
+## Funcionamento
+
+O funcionamento do sistema consiste em: o usuário inicia a contagem pressionando o botão. Durante a contagem, o usuário pode pausar ou reiniciar o temporizador pressionando os botões correspondentes.
+
+### Arquitetura
+
+O sistema foi desenvolvido para a Orange Pi PC Plus, utilizando a arquitetura ARM v7. Para compilar o código, é necessário usar o utilitário Makefile, que está incluído no projeto.
+
 
 ### Lista das instruções utilizadas no projeto   
     
@@ -258,6 +311,16 @@ Os pinos do microcontrolador estão conectados aos pinos correspondentes do disp
 | [<img src="https://avatars.githubusercontent.com/u/58979991?v=4" width=115><br><sub>Gabriel Carvalho</sub>](https://github.com/GabCarvaS) | [<img src="https://avatars.githubusercontent.com/u/7541966?v=4" width=115><br><sub>Vinicius Vieira</sub>](https://github.com/vini-insight) | [<img src="https://avatars.githubusercontent.com/u/37885125?v=4" width=115><br><sub>Everton Bruno Silva dos Santos</sub>](https://github.com/evertonbrunosds) |
 | :---------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: |
 
+
+# Assembly1
+Assembly1
+
+
+Produto
+códigos detalhadamente comentados;
+Script de compilação tipo Makefile para geração do código executável;
+Detalhamento dos software usados no trabalho, incluindo softwares básicos;
+Arquitetura do computador usado nos testes;
 
 ## PBL
 
