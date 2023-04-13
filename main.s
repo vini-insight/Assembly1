@@ -21,6 +21,9 @@ pressButton:
         b pressButton
 
 loop:
+        GPIOPinState b2
+	CMP R1, #0
+	BEQ pausar
         clear_lcd
         write_lcd R10
         sleep_by one_second, zero_mili_second
@@ -96,8 +99,8 @@ exit:
         @PA20 - Play/Pause
         b2:
                 .word 0x8
-                .word 0x14
                 .word 0x10
+                .word 0x14
                 .word 0x10
 
 
