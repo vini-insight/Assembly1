@@ -100,7 +100,7 @@ A instrução BGT causa um desvio condicional para o rótulo criado. A sintaxe �
 Onde, label é um rótulo criado para marcar onde o programa continuará a execução depois do desvio. GT (greater than) significa maior que. Desvia se o vaor do primeiro registrador for maior do que o valor do segundo registrador.
 
 
-# svc
+## svc
 
 A instrução SVC (Supervisor Call) é uma instrução usada em sistemas operacionais para fazer chamadas do sistema. A sintaxe é:
 
@@ -108,7 +108,7 @@ A instrução SVC (Supervisor Call) é uma instrução usada em sistemas operaci
 
 Onde, #valorImediato é um valor imediato que identifica o serviço do sistema a ser chamado. A instrução SVC interrompe a execução do programa e transfere o controle para o sistema operacional, que então lida com a chamada do sistema
 
-#### pop
+## pop
 
 A instrução POP é usada para retirar valores da pilha. A sintaxe é:
 
@@ -116,7 +116,7 @@ A instrução POP é usada para retirar valores da pilha. A sintaxe é:
 
 Onde, RlistaReg é uma lista separada por vírgulas de registradores a serem retirados da pilha. A instrução POP é útil para restaurar o estado dos registradores após um salvamento de estado usando a instrução PUSH.
 
-#### push
+### push
 
 A instrução PUSH é usada para colocar valores na pilha. A sintaxe é:
 
