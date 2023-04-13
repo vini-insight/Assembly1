@@ -104,7 +104,7 @@ Onde, label é um rótulo criado para marcar onde o programa continuará a execu
 
 A instrução SVC (Supervisor Call) é uma instrução usada em sistemas operacionais para fazer chamadas do sistema. A sintaxe é:
 
-        SVC #valorImediato
+    SVC #valorImediato
 
 Onde, #valorImediato é um valor imediato que identifica o serviço do sistema a ser chamado. A instrução SVC interrompe a execução do programa e transfere o controle para o sistema operacional, que então lida com a chamada do sistema
 
@@ -113,7 +113,7 @@ Onde, #valorImediato é um valor imediato que identifica o serviço do sistema a
 
 A instrução POP é usada para retirar valores da pilha. A sintaxe é:
 
-        POP {RlistaReg}
+    POP {RlistaReg}
 
 Onde, RlistaReg é uma lista separada por vírgulas de registradores a serem retirados da pilha. A instrução POP é útil para restaurar o estado dos registradores após um salvamento de estado usando a instrução PUSH.
 
@@ -122,7 +122,7 @@ Onde, RlistaReg é uma lista separada por vírgulas de registradores a serem ret
 
 A instrução PUSH é usada para colocar valores na pilha. A sintaxe é:
 
-        PUSH {RlistaReg}
+    PUSH {RlistaReg}
 
 Onde, RlistaReg é uma lista separada por vírgulas de registradores a serem colocados na pilha. A instrução PUSH é útil para salvar o estado dos registradores antes de fazer uma chamada do sistema ou uma operação que possa modificar o estado dos registradores
 
@@ -131,7 +131,7 @@ Onde, RlistaReg é uma lista separada por vírgulas de registradores a serem col
 
 SUB é uma instrução que executa a subtração de valores que estão em registradores ou denifidos de forma imediata. A sintaxe é:
 
-        SUB Rdestino, Rtermo1, Rtermo2
+    SUB Rdestino, Rtermo1, Rtermo2
 
 Onde, Rdestino é o registrador de destino. Rtermo1 é o registrador que contém o primeiro operando e Rtermo2 é um segundo operando.
 
@@ -142,7 +142,7 @@ A instrução SUB subtrai o valor do registrador Rtermo2 ou o valor imediato do 
 
 AND é uma instrução lógica que faz a operação AND bit a bit entre dois registradores e armazena o resultado em um registrador de destino. A sintaxe é:
 
-        AND Rdestino, Rtermo1, Rtermo2
+    AND Rdestino, Rtermo1, Rtermo2
 
 Onde, Rdestino é o registrador de destino. Rtermo1 e Rtermo2 são os registradores que contém os operandos para a operação AND.
 
@@ -153,7 +153,7 @@ A instrução AND executa uma operação AND bit a bit entre os valores dos regi
 
 LSL é uma instrução de deslocamento lógico à esquerda (Logical Shift Left) que desloca os bits de um valor de um registrador em uma determinada quantidade de posições para a esquerda. A sintaxe é:
 
-        LSL Rdestino, Rfonte, #quantidade
+    LSL Rdestino, Rfonte, #quantidade
 
 Onde, Rdestino é o registrador de destino. Rfonte é o registrador que contém o valor a ser deslocado. #quantidade é a quantidade de posições que o valor deve ser deslocado.
 
@@ -164,7 +164,7 @@ A instrução LSL desloca o valor do registrador Rfonte em #quantidade de posiç
 
 LSR é uma instrução de deslocamento lógico à direita (Logical Shift Right) que desloca os bits de um valor de um registrador em uma determinada quantidade de posições para a direita. A sintaxe é:
 
-        LSR Rdestino, Rfonte, #quantidade
+    LSR Rdestino, Rfonte, #quantidade
 
 Onde, Rdestino é o registrador de destino. Rfonte é o registrador que contém o valor a ser deslocado. #quantidade é a quantidade de posições que o valor deve ser deslocado.
 
@@ -175,7 +175,7 @@ A instrução LSR desloca o valor do registrador Rfonte em #quantidade de posiç
 
 BIC é uma instrução lógica que executa uma operação bit a bit de "bit clear" (limpar bit). Ela limpa os bits de um registrador que correspondem a um segundo registrador (que age como máscara), armazenando o resultado em um terceiro registrador. A sintaxe é:
 
-        BIC Rdestino, Rfonte, Rmascara
+    BIC Rdestino, Rfonte, Rmascara
 
 Onde, Rdestino é o registrador de destino. Rfonte é o registrador que contém o valor a ser limpo. Rmascara é o registrador que contém a máscara.
 
@@ -186,7 +186,7 @@ A instrução BIC executa uma operação bit a bit de "bit clear" entre os valor
 
 ORR é uma instrução lógica que executa uma operação bit a bit de "bitwise OR" (ou bit a bit) entre dois registradores e armazena o resultado em um terceiro registrador. A sintaxe é:
 
-        ORR Rdestino, Rtermo1, Rtermo2
+    ORR Rdestino, Rtermo1, Rtermo2
 
 Onde, Rdestino é o registrador de destino. Rtermo1 e Rtermo2 são os registradores que contém os operandos para a operação OR.
 
@@ -197,7 +197,7 @@ A instrução ORR executa uma operação bit a bit de "bitwise OR" entre os valo
 
 BEQ é uma instrução de salto condicional (branch equal) que salta para um endereço de memória especificado se a última comparação (normalmente com a instrução CMP) indicar que dois valores são iguais. A sintaxe é:
 
-        BEQ label
+    BEQ label
 
 Onde, label é o rótulo da instrução para a qual o salto deve ser feito se a comparação for verdadeira.
 
@@ -208,7 +208,7 @@ A instrução BEQ salta para a instrução rotulada pelo label somente se a últ
 
 BLT é uma instrução de salto condicional (branch less than) que salta para um endereço de memória especificado se a última comparação (normalmente com a instrução CMP) indicar que o primeiro valor é menor que o segundo. A sintaxe é:
 
-        BLT label
+    BLT label
 
 Onde, label é o rótulo da instrução para a qual o salto deve ser feito se a comparação for verdadeira.
 
@@ -219,7 +219,7 @@ A instrução BLT salta para a instrução rotulada pelo label somente se a últ
 
 BX é uma instrução de salto que alterna o processador para executar código em um endereço de memória especificado. A sintaxe é:
 
-        BX Rfonte
+    BX Rfonte
 
 Onde, Rfonte é o registrador que contém o endereço de memória para o qual o processador deve saltar.
 
