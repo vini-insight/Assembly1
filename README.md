@@ -108,6 +108,7 @@ A instrução SVC (Supervisor Call) é uma instrução usada em sistemas operaci
 
 Onde, #valorImediato é um valor imediato que identifica o serviço do sistema a ser chamado. A instrução SVC interrompe a execução do programa e transfere o controle para o sistema operacional, que então lida com a chamada do sistema
 
+
 ## pop
 
 A instrução POP é usada para retirar valores da pilha. A sintaxe é:
@@ -116,7 +117,8 @@ A instrução POP é usada para retirar valores da pilha. A sintaxe é:
 
 Onde, RlistaReg é uma lista separada por vírgulas de registradores a serem retirados da pilha. A instrução POP é útil para restaurar o estado dos registradores após um salvamento de estado usando a instrução PUSH.
 
-### push
+
+## push
 
 A instrução PUSH é usada para colocar valores na pilha. A sintaxe é:
 
@@ -124,7 +126,8 @@ A instrução PUSH é usada para colocar valores na pilha. A sintaxe é:
 
 Onde, RlistaReg é uma lista separada por vírgulas de registradores a serem colocados na pilha. A instrução PUSH é útil para salvar o estado dos registradores antes de fazer uma chamada do sistema ou uma operação que possa modificar o estado dos registradores
 
-#### SUB
+
+## SUB
 
 SUB é uma instrução que executa a subtração de valores que estão em registradores ou denifidos de forma imediata. A sintaxe é:
 
@@ -134,7 +137,8 @@ Onde, Rdestino é o registrador de destino. Rtermo1 é o registrador que contém
 
 A instrução SUB subtrai o valor do registrador Rtermo2 ou o valor imediato do valor no registrador Rtermo1 e armazena o resultado no registrador de destino Rdestino. O resultado pode ser positivo, negativo ou zero. Caso o resultado seja negativo, a flag N (negativo) é ativada. Caso o resultado seja zero, a flag Z (zero) é ativada.
 
-#### AND
+
+## AND
 
 AND é uma instrução lógica que faz a operação AND bit a bit entre dois registradores e armazena o resultado em um registrador de destino. A sintaxe é:
 
@@ -144,7 +148,8 @@ Onde, Rdestino é o registrador de destino. Rtermo1 e Rtermo2 são os registrado
 
 A instrução AND executa uma operação AND bit a bit entre os valores dos registradores Rtermo1 e Rtermo2 e armazena o resultado no registrador de destino Rdestino. O resultado final contém um bit '1' em cada posição em que ambos os operandos tenham um bit '1'.
 
-#### LSL
+
+## LSL
 
 LSL é uma instrução de deslocamento lógico à esquerda (Logical Shift Left) que desloca os bits de um valor de um registrador em uma determinada quantidade de posições para a esquerda. A sintaxe é:
 
@@ -154,7 +159,8 @@ Onde, Rdestino é o registrador de destino. Rfonte é o registrador que contém 
 
 A instrução LSL desloca o valor do registrador Rfonte em #quantidade de posições para a esquerda e armazena o resultado no registrador de destino Rdestino. Os bits que saem pela esquerda são perdidos, e os bits que entram na direita são preenchidos com zeros.
 
-#### LSR
+
+## LSR
 
 LSR é uma instrução de deslocamento lógico à direita (Logical Shift Right) que desloca os bits de um valor de um registrador em uma determinada quantidade de posições para a direita. A sintaxe é:
 
@@ -164,7 +170,8 @@ Onde, Rdestino é o registrador de destino. Rfonte é o registrador que contém 
 
 A instrução LSR desloca o valor do registrador Rfonte em #quantidade de posições para a direita e armazena o resultado no registrador de destino Rdestino. Os bits que saem pela direita são perdidos, e os bits que entram pela esquerda são preenchidos com zeros.
 
-#### BIC
+
+## BIC
 
 BIC é uma instrução lógica que executa uma operação bit a bit de "bit clear" (limpar bit). Ela limpa os bits de um registrador que correspondem a um segundo registrador (que age como máscara), armazenando o resultado em um terceiro registrador. A sintaxe é:
 
@@ -174,7 +181,8 @@ Onde, Rdestino é o registrador de destino. Rfonte é o registrador que contém 
 
 A instrução BIC executa uma operação bit a bit de "bit clear" entre os valores dos registradores Rfonte e Rmascara e armazena o resultado no registrador de destino Rdestino. Os bits no Rdestino são os mesmos que no Rfont
 
-#### ORR
+
+## ORR
 
 ORR é uma instrução lógica que executa uma operação bit a bit de "bitwise OR" (ou bit a bit) entre dois registradores e armazena o resultado em um terceiro registrador. A sintaxe é:
 
@@ -184,7 +192,8 @@ Onde, Rdestino é o registrador de destino. Rtermo1 e Rtermo2 são os registrado
 
 A instrução ORR executa uma operação bit a bit de "bitwise OR" entre os valores dos registradores Rtermo1 e Rtermo2 e armazena o resultado no registrador de destino Rdestino. O resultado final contém um bit '1' em cada posição em que pelo menos um dos operandos tenha um bit '1'.
 
-#### BEQ
+
+## BEQ
 
 BEQ é uma instrução de salto condicional (branch equal) que salta para um endereço de memória especificado se a última comparação (normalmente com a instrução CMP) indicar que dois valores são iguais. A sintaxe é:
 
@@ -194,7 +203,8 @@ Onde, label é o rótulo da instrução para a qual o salto deve ser feito se a 
 
 A instrução BEQ salta para a instrução rotulada pelo label somente se a última comparação (normalmente com a instrução CMP) indicar que dois valores são iguais. Caso contrário, a execução continua com a próxima instrução após a instrução BEQ.
 
-#### BLT
+
+## BLT
 
 BLT é uma instrução de salto condicional (branch less than) que salta para um endereço de memória especificado se a última comparação (normalmente com a instrução CMP) indicar que o primeiro valor é menor que o segundo. A sintaxe é:
 
@@ -204,7 +214,8 @@ Onde, label é o rótulo da instrução para a qual o salto deve ser feito se a 
 
 A instrução BLT salta para a instrução rotulada pelo label somente se a última comparação (normalmente com a instrução CMP) indicar que o primeiro valor é menor que o segundo. Caso contrário, a execução continua com a próxima instrução após a instrução BLT.
 
-#### BX
+
+## BX
 
 BX é uma instrução de salto que alterna o processador para executar código em um endereço de memória especificado. A sintaxe é:
 
@@ -214,9 +225,11 @@ Onde, Rfonte é o registrador que contém o endereço de memória para o qual o 
 
 A instrução BX alterna o processador para executar código em um endereço de memória especificado pelo valor do registrador Rfonte. Isso é útil para implementar saltos para funções em código de assembly.
 
+
 ### Mapeamento de Pinos
 
 Esta seção apresenta o mapeamento dos pinos de entrada/saída (GPIO) com as conexões do display utilizado no projeto. O mapeamento é essencial para garantir a correta comunicação entre o microcontrolador da GPIO e o display, possibilitando o correto funcionamento da interface de usuário.
+
 
 #### Mapeamento dos Pinos da GPIO para o DISPLAY
 
@@ -240,14 +253,17 @@ O mapeamento apresentado na tabela abaixo é realizado por meio da identificaç�
 
 Os pinos do microcontrolador estão conectados aos pinos correspondentes do display para que seja possível exibir as informações corretamente.
 
+
 ## Testes e Resultados
 
 <>
+
 
 ## Desenvolvedores
 
 | [<img src="https://avatars.githubusercontent.com/u/58979991?v=4" width=115><br><sub>Gabriel Carvalho</sub>](https://github.com/GabCarvaS) | [<img src="https://avatars.githubusercontent.com/u/7541966?v=4" width=115><br><sub>Vinicius Vieira</sub>](https://github.com/vini-insight) | [<img src="https://avatars.githubusercontent.com/u/37885125?v=4" width=115><br><sub>Everton Bruno Silva dos Santos</sub>](https://github.com/evertonbrunosds) |
 | :---------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: |
+
 
 ## PBL
 
