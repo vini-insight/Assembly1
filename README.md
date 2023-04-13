@@ -19,8 +19,6 @@ Arquitetura do computador usado nos testes;
 
 ### Descrição das instruções
 
-## ADD
-
 ### ADD
 
 ADD é uma instrução que executa a soma de valores que estão em registradores ou denifidos de forma imediata. A sintaxe é:
@@ -31,7 +29,7 @@ ADD é uma instrução que executa a soma de valores que estão em registradores
 
 Onde, Rdestino é o registrador de destino. Rtermo1 é o registrador que contém o primeiro operando. Rtermo2 é um segundo operando e #valorImediato é qualquer valor no intervalo 0-4095.
 
-## MOV
+### MOV
 
 A instrução MOV copia o valor de Operand2 em Rd. A sintaxe é:
 
@@ -41,7 +39,7 @@ A instrução MOV copia o valor de Operand2 em Rd. A sintaxe é:
     
 Onde, Rd é o registrador de destino. Operand2 é um segundo operando e #valorImediato é qualquer valor no intervalo 0-65535.
 
-## LDR
+### LDR
 
 A instrução LDR carrega um registrador com um valor da memória. A sintaxe é:
 
@@ -50,7 +48,7 @@ A instrução LDR carrega um registrador com um valor da memória. A sintaxe é:
 Onde, Rd especifica o registro a ser carregado. Rn especifica o registro no qual o endereço de memória é baseado. Rm especifica o registro que contém um valor a ser usado como deslocamento
 
 
-## STR
+### STR
 
 A instrução STR armazenam um valor de registro na memória. A sintaxe é:
 
@@ -59,7 +57,7 @@ A instrução STR armazenam um valor de registro na memória. A sintaxe é:
 Onde, Rd especifica o registro a ser armazenado. Rn especifica o registro no qual o endereço de memória é baseado. Rm especifica o registro que contém um valor a ser usado como deslocamento
 
 
-## CMP
+### CMP
 
 A instrução CMP comparam o valor em um registrador. A sintaxe é:
     
@@ -69,7 +67,7 @@ A instrução CMP comparam o valor em um registrador. A sintaxe é:
 
 Onde, cond é um código de condição opcional. Rn é o registrador ARM contendo o primeiro operando. Operand2 é um segundo registrador. #valorImediato é qualquer valor no intervalo 0-255.
 
-## B
+### B
 
 A instrução B causa um desvio incondicional para o rótulo criado. A sintaxe é:
 
@@ -78,8 +76,7 @@ A instrução B causa um desvio incondicional para o rótulo criado. A sintaxe �
 Onde, label é um rótulo criado para marcar onde o programa continuará a execução depois do desvio.
 
 
-
-## BL
+### BL
 
 A instrução BL faz com que um desvio incondicional seja rotulado e copia o endereço da próxima instrução em LR (R14, o registrador de link). A sintaxe é:
 
@@ -88,7 +85,7 @@ A instrução BL faz com que um desvio incondicional seja rotulado e copia o end
 Onde, label é um rótulo criado para marcar onde o programa continuará a execução depois do desvio.
 
 
-## BGT
+### BGT
 
 A instrução BGT causa um desvio condicional para o rótulo criado. A sintaxe é:
 
@@ -97,7 +94,7 @@ A instrução BGT causa um desvio condicional para o rótulo criado. A sintaxe �
 Onde, label é um rótulo criado para marcar onde o programa continuará a execução depois do desvio. GT (greater than) significa maior que. Desvia se o vaor do primeiro registrador for maior do que o valor do segundo registrador.
 
 
-## svc
+### svc
 
 A instrução SVC (Supervisor Call) é uma instrução usada em sistemas operacionais para fazer chamadas do sistema. A sintaxe é:
 
@@ -106,7 +103,7 @@ A instrução SVC (Supervisor Call) é uma instrução usada em sistemas operaci
 Onde, #valorImediato é um valor imediato que identifica o serviço do sistema a ser chamado. A instrução SVC interrompe a execução do programa e transfere o controle para o sistema operacional, que então lida com a chamada do sistema
 
 
-## pop
+### pop
 
 A instrução POP é usada para retirar valores da pilha. A sintaxe é:
 
@@ -115,7 +112,7 @@ A instrução POP é usada para retirar valores da pilha. A sintaxe é:
 Onde, RlistaReg é uma lista separada por vírgulas de registradores a serem retirados da pilha. A instrução POP é útil para restaurar o estado dos registradores após um salvamento de estado usando a instrução PUSH.
 
 
-## push
+### push
 
 A instrução PUSH é usada para colocar valores na pilha. A sintaxe é:
 
@@ -124,7 +121,7 @@ A instrução PUSH é usada para colocar valores na pilha. A sintaxe é:
 Onde, RlistaReg é uma lista separada por vírgulas de registradores a serem colocados na pilha. A instrução PUSH é útil para salvar o estado dos registradores antes de fazer uma chamada do sistema ou uma operação que possa modificar o estado dos registradores
 
 
-## SUB
+### SUB
 
 SUB é uma instrução que executa a subtração de valores que estão em registradores ou denifidos de forma imediata. A sintaxe é:
 
@@ -135,7 +132,7 @@ Onde, Rdestino é o registrador de destino. Rtermo1 é o registrador que contém
 A instrução SUB subtrai o valor do registrador Rtermo2 ou o valor imediato do valor no registrador Rtermo1 e armazena o resultado no registrador de destino Rdestino. O resultado pode ser positivo, negativo ou zero. Caso o resultado seja negativo, a flag N (negativo) é ativada. Caso o resultado seja zero, a flag Z (zero) é ativada.
 
 
-## AND
+### AND
 
 AND é uma instrução lógica que faz a operação AND bit a bit entre dois registradores e armazena o resultado em um registrador de destino. A sintaxe é:
 
@@ -146,7 +143,7 @@ Onde, Rdestino é o registrador de destino. Rtermo1 e Rtermo2 são os registrado
 A instrução AND executa uma operação AND bit a bit entre os valores dos registradores Rtermo1 e Rtermo2 e armazena o resultado no registrador de destino Rdestino. O resultado final contém um bit '1' em cada posição em que ambos os operandos tenham um bit '1'.
 
 
-## LSL
+### LSL
 
 LSL é uma instrução de deslocamento lógico à esquerda (Logical Shift Left) que desloca os bits de um valor de um registrador em uma determinada quantidade de posições para a esquerda. A sintaxe é:
 
@@ -157,7 +154,7 @@ Onde, Rdestino é o registrador de destino. Rfonte é o registrador que contém 
 A instrução LSL desloca o valor do registrador Rfonte em #quantidade de posições para a esquerda e armazena o resultado no registrador de destino Rdestino. Os bits que saem pela esquerda são perdidos, e os bits que entram na direita são preenchidos com zeros.
 
 
-## LSR
+### LSR
 
 LSR é uma instrução de deslocamento lógico à direita (Logical Shift Right) que desloca os bits de um valor de um registrador em uma determinada quantidade de posições para a direita. A sintaxe é:
 
@@ -168,7 +165,7 @@ Onde, Rdestino é o registrador de destino. Rfonte é o registrador que contém 
 A instrução LSR desloca o valor do registrador Rfonte em #quantidade de posições para a direita e armazena o resultado no registrador de destino Rdestino. Os bits que saem pela direita são perdidos, e os bits que entram pela esquerda são preenchidos com zeros.
 
 
-## BIC
+### BIC
 
 BIC é uma instrução lógica que executa uma operação bit a bit de "bit clear" (limpar bit). Ela limpa os bits de um registrador que correspondem a um segundo registrador (que age como máscara), armazenando o resultado em um terceiro registrador. A sintaxe é:
 
@@ -179,7 +176,7 @@ Onde, Rdestino é o registrador de destino. Rfonte é o registrador que contém 
 A instrução BIC executa uma operação bit a bit de "bit clear" entre os valores dos registradores Rfonte e Rmascara e armazena o resultado no registrador de destino Rdestino. Os bits no Rdestino são os mesmos que no Rfont
 
 
-## ORR
+### ORR
 
 ORR é uma instrução lógica que executa uma operação bit a bit de "bitwise OR" (ou bit a bit) entre dois registradores e armazena o resultado em um terceiro registrador. A sintaxe é:
 
@@ -190,7 +187,7 @@ Onde, Rdestino é o registrador de destino. Rtermo1 e Rtermo2 são os registrado
 A instrução ORR executa uma operação bit a bit de "bitwise OR" entre os valores dos registradores Rtermo1 e Rtermo2 e armazena o resultado no registrador de destino Rdestino. O resultado final contém um bit '1' em cada posição em que pelo menos um dos operandos tenha um bit '1'.
 
 
-## BEQ
+### BEQ
 
 BEQ é uma instrução de salto condicional (branch equal) que salta para um endereço de memória especificado se a última comparação (normalmente com a instrução CMP) indicar que dois valores são iguais. A sintaxe é:
 
@@ -201,7 +198,7 @@ Onde, label é o rótulo da instrução para a qual o salto deve ser feito se a 
 A instrução BEQ salta para a instrução rotulada pelo label somente se a última comparação (normalmente com a instrução CMP) indicar que dois valores são iguais. Caso contrário, a execução continua com a próxima instrução após a instrução BEQ.
 
 
-## BLT
+### BLT
 
 BLT é uma instrução de salto condicional (branch less than) que salta para um endereço de memória especificado se a última comparação (normalmente com a instrução CMP) indicar que o primeiro valor é menor que o segundo. A sintaxe é:
 
@@ -212,7 +209,7 @@ Onde, label é o rótulo da instrução para a qual o salto deve ser feito se a 
 A instrução BLT salta para a instrução rotulada pelo label somente se a última comparação (normalmente com a instrução CMP) indicar que o primeiro valor é menor que o segundo. Caso contrário, a execução continua com a próxima instrução após a instrução BLT.
 
 
-## BX
+### BX
 
 BX é uma instrução de salto que alterna o processador para executar código em um endereço de memória especificado. A sintaxe é:
 
