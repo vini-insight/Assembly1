@@ -302,7 +302,7 @@ Os pinos do microcontrolador estão conectados aos pinos correspondentes do disp
 
 
 ## Testes e Resultados
-
+![Screenshot](countdownFlowchart.jpg)
 <>
 
 
