@@ -1,84 +1,74 @@
+
+@ abrir terminal na pasta do projeto e executar com o comando 'sh run.sh' OU com o comando 'make'. precisa informar senha de usuário sudo.
 .include "util.s"
 .include "lcd.s"
-
 .global _start
-
 _start:
-        gpio_map file_name, page_length, andress_base
-        start_lcd
-        GPIOPinIn b1
-        GPIOPinIn b2
-        gpio_pin_out PA8
-        gpio_pin_high PA8
+        GPIOmap fileName, pageSize, baseAddress
+        startLCD
+        setGPIOinputPin b1
+        setGPIOinputPin b2
+        setGPIOoutputPin PA8
+        GPIOpinHIGH PA8
         MOV R10, #9
-        @ b loop
-        b pressButton
-
-pressButton:
-        GPIOPinState b1         @ verifica se o botao de INICIAR foi pressionado (pressiona uma vez e solta para iniciar contagem)
+        b startsIFpressButton
+startsIFpressButton:
+        checkButton b1          @ verifica se o botao de startButton foi pressionado
         CMP R1, #0
-        BEQ loop                @ se foi pressionado desvia para loop
-        b pressButton           @ caso contrário fica volta para inicio da label pressButton e fica nesse loop até botão INICIAR ser pressionado
-
-loop:
-        GPIOPinState b2         @ verifica se o botao de PAUSAR foi pressionado (enquanto botão PAUSAR estiver pressionado ele a contagem fica parada)
-	CMP R1, #0
-	BEQ pausar              @ se foi pressionado desvia para PAUSAR, caso contrário continua execução nas linhas abaixo e seguintes
-        clear_lcd
-        write_lcd R10
+        BEQ while
+        b startsIFpressButton
+while:
+        checkButton b2          @ verifica se o botao de pauseButton foi pressionado
+        CMP R1, #0
+        BEQ pausesIFbuttonISpressed
+        clearLCD
+        writeLCD R10
         sleep_by one_second, zero_mili_second
         SUB R10, R10, #1
         CMP R10, #-1
-        BNE loop
-        gpio_pin_low PA8
+        BNE while
+        GPIOpinLOW PA8
         b exit
-	
-pausar:
-	sleep_by one_second, zero_mili_second           @ aguarda um segundo e desvia
-	b loop
-
+pausesIFbuttonISpressed:
+        sleep_by one_second, zero_mili_second
+        b while
 exit:
         mov r7, #1
         mov r0, #0
         svc 0
-
-@ LED VERMELHO
+@               As Labels seguintes tem "4 words":
+@               primeira '.word' é o offset do registrador de função do pino (serve para alterar o modo do pino I/O)
+@               segunda '.word' é o offset do pino no registrador de função (lsb, serve para identificar o tríade do pino)
+@               terceira '.word' é o offset do pino no registrador de dados (serve para apontar a posição no registrador de dados)
+@               quarta '.word' é o offset do registrador de dados do pino (serve para acessar o registrador de dados do pino)
 .data
-        @PA18 - Enable
-        ENABLE:
+        
+        ENABLE: @PA18 - ENABLE
                 .word 0x8
                 .word 0x8
                 .word 0x12
                 .word 0x10
-        @PA2 - RS
-        RS:
+        RS:     @PA2 - RS
                 .word 0x0
                 .word 0x8
                 .word 0x2
                 .word 0x10
-        @PG7 - DB7
-        DB7:
+        DB7:    @PG7 - DB7
                 .word 0xD8
                 .word 0x1C
                 .word 0x7
                 .word 0xE8
-
-        @PG6 - DB6
-        DB6:
+        DB6:    @PG6 - DB6
                 .word 0xD8
                 .word 0x18
                 .word 0x6
                 .word 0xE8
-
-        @PG9 - DB5
-        DB5:
+        DB5:    @PG9 - DB5
                 .word 0xDC
                 .word 0x4
                 .word 0x9
                 .word 0xE8
-
-        @PG8 - DB4
-        DB4:
+        DB4:    @PG8 - DB4
                 .word 0xDC
                 .word 0x0
                 .word 0x8
@@ -93,25 +83,24 @@ exit:
                 .word 0
                 .word 8
                 .word 0x10
-        @PA10 - Reset
-        b1:
+        b1:     @PA10 startButton
                 .word 0x4
                 .word 0x8
                 .word 0xA
                 .word 0x10
-
-        @PA20 - Play/Pause
-        b2:
+        b2:     @PA20 pauseButton
                 .word 0x8
                 .word 0x10
                 .word 0x14
                 .word 0x10
-
-
-
-        file_name: .asciz "/dev/mem" @ Caminho do arquivo para mapeamento da memória virtual
-        andress_base: .word 0x1C20 @ Endereco base PIO / 4096
-        page_length: .word 0x1000
+        b3:     @PA7: resetButton
+                .word 0x0
+                .word 0x1F
+                .word 0x7
+                .word 0x10
+        fileName: .asciz "/dev/mem"             @ Caminho do arquivo para mapeamento da memória virtual
+        baseAddress: .word 0x1C20               @ Endereco base GPIO / 4096 (encontrado no datasheet do allwinner h3)
+        pageSize: .word 0x1000                  @ tamanho da página virtual
         zero_second: .word 0
         mili_1_seconds: .word 1000000
         mili_5_seconds: .word 5000000
