@@ -4,6 +4,8 @@
 
 ![Screenshot](countdownFlowchart.jpg)
 
+referencia: https://app.diagrams.net/ (software utilizado para criar o fluxograma)
+
 ## Tópicos
 
 :small_blue_diamond: [Descrição do Projeto](#descrição-do-projeto-e-requisitos)
