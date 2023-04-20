@@ -73,7 +73,8 @@ O funcionamento do sistema consiste em: o usuário inicia a contagem pressionand
 
 O sistema foi desenvolvido para a Orange Pi PC Plus, utilizando a arquitetura ARM v7. Para compilar o código, é necessário usar o utilitário Makefile, que está incluído no projeto.
 
-
+### Assembly
+É uma linguagem de programação composta por mnemônicos simples. Ela usa as instruções da arquitetura (ou processador) que estiver sendo usado.
 
 ### Lista das instruções utilizadas no projeto   
     
