@@ -73,6 +73,9 @@ O funcionamento do sistema consiste em: o usuário inicia a contagem pressionand
 
 O sistema foi desenvolvido para a Orange Pi PC Plus, utilizando a arquitetura ARM v7. Para compilar o código, é necessário usar o utilitário Makefile, que está incluído no projeto.
 
+### Arquitetura ARM
+ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acrônimo de Reduced Instruction Set Computer, ou Computador com um conjunto reduzido de instruções. O que mostra que a arquitetura ARM foi inspirado no RISC, onde o objetivo era desenvolver um hardware simples e também um conjunto pequeno de instruções que garanta tamanho reduzido, velocidade e eficiência no consumo de potência.
+
 ### Assembly
 É uma linguagem de programação composta por mnemônicos simples. Ela usa as instruções da arquitetura (ou processador) que estiver sendo usado.
 
