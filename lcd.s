@@ -1,136 +1,136 @@
 
-.macro enableLCD
-        GPIOpinLOW ENABLE
-        sleep_by zero_second mili_1_seconds
-        GPIOpinHIGH ENABLE
-        sleep_by zero_second mili_1_seconds
-        GPIOpinLOW ENABLE
+.macro habilitarLCD
+        GPIOpinLOW PA18toENABLE
+        sleep zeroSecond oneMILLIsecond
+        GPIOpinHIGH PA18toENABLE
+        sleep zeroSecond oneMILLIsecond
+        GPIOpinLOW PA18toENABLE
 .endm
 
 .macro clearLCD
 
-        GPIOpinLOW RS
+        GPIOpinLOW PA2toRS
 
-        GPIOpinLOW DB7
-        GPIOpinLOW DB6
-        GPIOpinLOW DB5
-        GPIOpinLOW DB4
-        enableLCD
+        GPIOpinLOW PG7toDB7
+        GPIOpinLOW PG6toDB6
+        GPIOpinLOW PG9toDB5
+        GPIOpinLOW PG8toDB4
+        habilitarLCD
 
-        GPIOpinHIGH DB4
-        enableLCD
+        GPIOpinHIGH PG8toDB4
+        habilitarLCD
 .endm
 
 .macro startLCD
 
-        setGPIOoutputPin RS
-        setGPIOoutputPin ENABLE
-        setGPIOoutputPin DB7
-        setGPIOoutputPin DB6
-        setGPIOoutputPin DB6
-        setGPIOoutputPin DB5
-        setGPIOoutputPin DB4
+        setGPIOoutputPin PA2toRS
+        setGPIOoutputPin PA18toENABLE
+        setGPIOoutputPin PG7toDB7
+        setGPIOoutputPin PG6toDB6
+        setGPIOoutputPin PG6toDB6
+        setGPIOoutputPin PG9toDB5
+        setGPIOoutputPin PG8toDB4
 
-        GPIOpinLOW RS
+        GPIOpinLOW PA2toRS
 
-        GPIOpinLOW DB7
-        GPIOpinLOW DB6
-        GPIOpinHIGH DB5
-        GPIOpinHIGH DB4
-        enableLCD
-        sleep_by zero_second, mili_5_seconds
+        GPIOpinLOW PG7toDB7
+        GPIOpinLOW PG6toDB6
+        GPIOpinHIGH PG9toDB5
+        GPIOpinHIGH PG8toDB4
+        habilitarLCD
+        sleep zeroSecond, fiveMILLIseconds
 
-        GPIOpinLOW DB7
-        GPIOpinLOW DB6
-        GPIOpinHIGH DB5
-        GPIOpinHIGH DB4
-        enableLCD
-        sleep_by zero_second, micro_150_seconds
+        GPIOpinLOW PG7toDB7
+        GPIOpinLOW PG6toDB6
+        GPIOpinHIGH PG9toDB5
+        GPIOpinHIGH PG8toDB4
+        habilitarLCD
+        sleep zeroSecond, micro150seconds
 
-        GPIOpinLOW DB7
-        GPIOpinLOW DB6
-        GPIOpinHIGH DB5
-        GPIOpinHIGH DB4
-        enableLCD
+        GPIOpinLOW PG7toDB7
+        GPIOpinLOW PG6toDB6
+        GPIOpinHIGH PG9toDB5
+        GPIOpinHIGH PG8toDB4
+        habilitarLCD
 
-        GPIOpinLOW DB7
-        GPIOpinLOW DB6
-        GPIOpinHIGH DB5
-        GPIOpinLOW DB4
-        enableLCD
+        GPIOpinLOW PG7toDB7
+        GPIOpinLOW PG6toDB6
+        GPIOpinHIGH PG9toDB5
+        GPIOpinLOW PG8toDB4
+        habilitarLCD
 
-        GPIOpinLOW DB7
-        GPIOpinLOW DB6
-        GPIOpinHIGH DB5
-        GPIOpinLOW DB4
-        enableLCD
+        GPIOpinLOW PG7toDB7
+        GPIOpinLOW PG6toDB6
+        GPIOpinHIGH PG9toDB5
+        GPIOpinLOW PG8toDB4
+        habilitarLCD
 
-        GPIOpinLOW DB7
-        GPIOpinLOW DB6
-        GPIOpinLOW DB5
-        GPIOpinLOW DB4
-        enableLCD
+        GPIOpinLOW PG7toDB7
+        GPIOpinLOW PG6toDB6
+        GPIOpinLOW PG9toDB5
+        GPIOpinLOW PG8toDB4
+        habilitarLCD
 
-        enableLCD
-        GPIOpinHIGH DB7
-        GPIOpinLOW DB6
-        GPIOpinLOW DB5
-        GPIOpinLOW DB4
-        enableLCD
+        habilitarLCD
+        GPIOpinHIGH PG7toDB7
+        GPIOpinLOW PG6toDB6
+        GPIOpinLOW PG9toDB5
+        GPIOpinLOW PG8toDB4
+        habilitarLCD
 
-        GPIOpinLOW DB7
-        enableLCD
+        GPIOpinLOW PG7toDB7
+        habilitarLCD
 
-        GPIOpinHIGH DB4
-        enableLCD
+        GPIOpinHIGH PG8toDB4
+        habilitarLCD
 
-        GPIOpinLOW DB4
-        enableLCD
+        GPIOpinLOW PG8toDB4
+        habilitarLCD
 
-        GPIOpinLOW DB7
-        GPIOpinHIGH DB6
-        GPIOpinHIGH DB5
-        enableLCD
+        GPIOpinLOW PG7toDB7
+        GPIOpinHIGH PG6toDB6
+        GPIOpinHIGH PG9toDB5
+        habilitarLCD
 
-        GPIOpinLOW DB6
-        GPIOpinLOW DB5
-        enableLCD
+        GPIOpinLOW PG6toDB6
+        GPIOpinLOW PG9toDB5
+        habilitarLCD
 
-        GPIOpinHIGH DB7
-        GPIOpinHIGH DB6
-        GPIOpinHIGH DB5
-        enableLCD
+        GPIOpinHIGH PG7toDB7
+        GPIOpinHIGH PG6toDB6
+        GPIOpinHIGH PG9toDB5
+        habilitarLCD
 
-        GPIOpinLOW DB7
-        GPIOpinLOW DB6
-        GPIOpinLOW DB5
-        GPIOpinLOW DB4
-        enableLCD
+        GPIOpinLOW PG7toDB7
+        GPIOpinLOW PG6toDB6
+        GPIOpinLOW PG9toDB5
+        GPIOpinLOW PG8toDB4
+        habilitarLCD
 
-        GPIOpinLOW DB7
-        GPIOpinHIGH DB6
-        GPIOpinHIGH DB5
-        GPIOpinLOW DB4
-        enableLCD
+        GPIOpinLOW PG7toDB7
+        GPIOpinHIGH PG6toDB6
+        GPIOpinHIGH PG9toDB5
+        GPIOpinLOW PG8toDB4
+        habilitarLCD
         .ltorg
 .endm
 
 .macro prefixNumberLCD
-        GPIOpinLOW DB7
-        GPIOpinLOW DB6
-        GPIOpinHIGH DB5
-        GPIOpinHIGH DB4
-        enableLCD
+        GPIOpinLOW PG7toDB7
+        GPIOpinLOW PG6toDB6
+        GPIOpinHIGH PG9toDB5
+        GPIOpinHIGH PG8toDB4
+        habilitarLCD
 .endm
 
 .macro writeLCD number
-        GPIOpinHIGH RS
+        GPIOpinHIGH PA2toRS
         prefixNumberLCD
 
         @ para D4
         MOV R1, #0b00001
         AND R1, \number         @ 0001 & 0011 -> 0001
-        LDR R0, =DB4
+        LDR R0, =PG8toDB4
         LDR R7, [R0, #8]
         BL switchLogicValuePin
 
@@ -138,7 +138,7 @@
         MOV R1, #0b00010
         AND R1, \number         @ 0010 & 0011 -> 0010
         LSR R1, #1              @ Desloca o bit 1x para direita  -> 0001
-        LDR R0, =DB5
+        LDR R0, =PG9toDB5
         LDR R7, [R0, #8]
         BL switchLogicValuePin
 
@@ -146,7 +146,7 @@
         MOV R1, #0b00100
         AND R1, \number         @ 0100 & 0101 -> 0100
         LSR R1, #2              @ Desloca o bit 2x para direita  -> 0001
-        LDR R0, =DB6
+        LDR R0, =PG6toDB6
         LDR R7, [R0, #8]
         BL switchLogicValuePin
 
@@ -154,9 +154,9 @@
         MOV R1, #0b01000
         AND R1, \number         @ 01000 & 01000 -> 01000
         LSR R1, #3              @ Desloca o bit 3x para direita  -> 00001
-        LDR R0, =DB7
+        LDR R0, =PG7toDB7
         LDR R7, [R0, #8]
         BL switchLogicValuePin
-        enableLCD
+        habilitarLCD
 .endm
 @ fim do arquivo
