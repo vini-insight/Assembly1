@@ -9,7 +9,7 @@ https://user-images.githubusercontent.com/7541966/232961840-0185417e-be34-4628-b
 
 ## Fluxograma
 
-![Screenshot](countdownFlowchart.jpg)
+![Screenshot](exportCountdownFlowchart.jpg)
 
 referencia: https://app.diagrams.net/ (software utilizado para criar o fluxograma)
 
