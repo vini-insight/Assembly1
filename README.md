@@ -79,8 +79,6 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 
 ### Processador ARM
 
-### Processador ARM
-
 <div>
 	<img src="/images/allwinnerH3.jpg" alt="img" style="height: 20%; width: 20%;" align="left"> 
 
@@ -98,14 +96,8 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 ### Orange Pi PC Plus
 
 <div>
-    <p>
-        <img src="/images/Orange Pi PC Plus - Copia.png" alt="img" style="height: 25%; width: 25%;" align="left">    
-        Orange Pi PC Plus é um SBC Single-Board Card computer, ou, computador de cartão de placa única.
-        Tem código aberto e usa arquitetura ARM. Pode executar Ubuntu e outros sistemas operacionais.
-        Orange Pi PC Plus usa Allwinner H3 como CPU. A Orange Pi PC Plus pode ser usada para construir
-        Um servidor de rede sem fio, jogos, Reprodutor de música e video, entre outros fins. Ela foi
-        projetada para quem deseja usar a tecnologia para criar e inovar.
-    </p>
+	<img src="/images/Orange Pi PC Plus - Copia.png" alt="img" style="height: 20%; width: 20%;" align="right">
+	Orange Pi PC Plus é um SBC Single-Board Card computer, ou, computador de cartão de placa única.	Tem código aberto e usa arquitetura ARM. Pode executar Ubuntu e outros sistemas operacionais. Orange Pi PC Plus usa Allwinner H3 como CPU. A Orange Pi PC Plus pode ser usada para construir um servidor de rede sem fio, jogos, Reprodutor de música e video, entre outros fins. Ela foi projetada para quem deseja usar a tecnologia para criar e inovar.
 </div>
     
 
