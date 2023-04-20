@@ -76,6 +76,18 @@ O sistema foi desenvolvido para a Orange Pi PC Plus, utilizando a arquitetura AR
 ### Arquitetura ARM
 ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acrônimo de Reduced Instruction Set Computer, ou Computador com um conjunto reduzido de instruções. O que mostra que a arquitetura ARM foi inspirado no RISC, onde o objetivo era desenvolver um hardware simples e também um conjunto pequeno de instruções que garanta tamanho reduzido, velocidade e eficiência no consumo de potência.
 
+### Processador ARM
+No projeto foi utilizado o processador Allwinner H3. Suas características básicas são
+- Representação em 32 bits
+- 16 registradores:
+    - r0 até r12: são de uso geral
+    - r13: Stack Pointer (SP)
+    - r14: Link Register (LR)
+    - r15: Program Counter (PC)
+
+![Screenshot](/images/allwinnerH3.jpg)
+    
+
 ### Assembly
 É uma linguagem de programação composta por mnemônicos simples. Ela usa as instruções da arquitetura (ou processador) que estiver sendo usado.
 
