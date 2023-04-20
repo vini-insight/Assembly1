@@ -85,7 +85,18 @@ No projeto foi utilizado o processador Allwinner H3. Suas características bási
     - r14: Link Register (LR)
     - r15: Program Counter (PC)
 
-<img src="/images/allwinnerH3.jpg" style="height: 25%; width:25%;"/>
+<div>
+        <pre>
+            No projeto foi utilizado o processador Allwinner H3. Suas características básicas são
+            - Representação em 32 bits
+            - 16 registradores:
+                - r0 até r12: são de uso geral
+                - r13: Stack Pointer (SP)
+                - r14: Link Register (LR)
+                - r15: Program Counter (PC)
+        </pre>
+        <img src="/images/allwinnerH3.jpg" style="height: 25%; width:25%;"/>
+    </div>
 
 ![Screenshot](/images/allwinnerH3.jpg style="height: 25%; width:25%;")
     
