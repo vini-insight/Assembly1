@@ -85,12 +85,12 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
     No projeto foi utilizado o processador Allwinner H3 Quad-core Cortex-A7 de
     1.5 GHz. Algumas características básicas são:
 
-    - Representação em 32 bits
-    - 16 registradores:
-        - r0 até r12: são de uso geral
-        - r13: Stack Pointer (SP)
-        - r14: Link Register (LR)
-        - r15: Program Counter (PC)
+        - Representação em 32 bits
+        - 16 registradores:
+            - r0 até r12: são de uso geral
+            - r13: Stack Pointer (SP)
+            - r14: Link Register (LR)
+            - r15: Program Counter (PC)
 </div>
 
 ### Orange Pi PC Plus
