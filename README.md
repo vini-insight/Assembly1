@@ -87,7 +87,7 @@ No projeto foi utilizado o processador Allwinner H3. Suas características bási
 
 <img src="/images/allwinnerH3.jpg" style="height: 25%; width:25%;"/>
 
-![Screenshot](/images/allwinnerH3.jpg)
+![Screenshot](/images/allwinnerH3.jpg style="height: 25%; width:25%;")
     
 
 ### Assembly
