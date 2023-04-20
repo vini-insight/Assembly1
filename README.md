@@ -80,6 +80,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 ### Processador ARM
 
 <div>
+    <pre>
     <img src="/images/allwinnerH3.jpg" alt="img" style="height: 20%; width: 20%;" align="left">    
     No projeto foi utilizado o processador Allwinner H3 Quad-core Cortex-A7 de 1.5 GHz.
     Algumas características básicas são:
@@ -90,6 +91,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
         - r13: Stack Pointer (SP)
         - r14: Link Register (LR)
         - r15: Program Counter (PC)
+    </pre>
 </div>
 
 ### Orange Pi PC Plus
