@@ -1,8 +1,10 @@
 
-@ abrir terminal na pasta do projeto e executar com o comando 'sh run.sh' OU com o comando 'make'. precisa informar senha de usuário sudo.
+@ abrir terminal na pasta do projeto e executar com o comando 'make'. precisa informar senha de usuário sudo.
+@ outra alternativa é o comando 'sh run.sh'. também precisa informar senha de usuário sudo.
 .include "util.s"
 .include "lcd.s"
 .global _start
+
 _start:
         GPIOmap fileName, pageSize, baseAddress
         setGPIOinputPin PA7toStartButton
@@ -16,18 +18,18 @@ _start:
         GPIOpinLOW PA9toBlueLED
         MOV R10, #9
         b startsIFpressButton
-        @sleep oneSecond, zeroMILLIsecond
-        @b exit
+
 startsIFpressButton:
-        checkButton PA7toStartButton          @ verifica se o botao de PA7toStartButton foi pressionado
+        checkButton PA7toStartButton            @ verifica se o botao de iniciar (PA7) foi pressionado
         CMP R1, #0
         BEQ while
         b startsIFpressButton
+
 while:
-        checkButton PA10toPauseButton          @ verifica se o botao de PA10toPauseButton foi pressionado
+        checkButton PA10toPauseButton           @ verifica se o botao de pausar (PA10) está pressionado
         CMP R1, #0
         BEQ pausesIFbuttonISpressed
-        checkButton PA20toResetButton          @ verifica se o botao de PA20toResetButton foi pressionado
+        checkButton PA20toResetButton           @ verifica se o botao de reiniciar (PA20) está pressionado
         CMP R1, #0
         BEQ resetCountIFbuttonISpressed
         clearLCD
@@ -38,78 +40,81 @@ while:
         BNE while        
         GPIOpinHIGH PA8toRedLED
         GPIOpinHIGH PA9toBlueLED
-        b exit        
+        b exit
+
 pausesIFbuttonISpressed:
         sleep oneSecond, zeroMILLIsecond
         b while
+
 resetCountIFbuttonISpressed:
         MOV R10, #9
         b while
+
 exit:
-        sleep oneSecond, zeroMILLIsecond
-        GPIOpinLOW PA8toRedLED
-        clearLCD
+        sleep oneSecond, zeroMILLIsecond        @ espera um segundo antes de finalizar execução
+        GPIOpinLOW PA8toRedLED                  @ deixa LED vermelhor apagado para nao iniciar acesso na próxima execução
+        clearLCD                                @ apaga também o LCD
         mov r7, #1
         mov r0, #0
         svc 0
-@               As Labels seguintes tem "4 words":
+@               As Labels seguintes tem QUATRO ".words":
 @               VALORES PODEM ESTAR NO SISTEMA HEXADECIMAL (0xF) OU DECIMAIS (15).
 @               primeira '.word' é o offset do registrador de função do pino (serve para alterar o modo do pino I/O)
 @               segunda '.word' é o offset do pino no registrador de função (lsb, serve para identificar o tríade do pino)
 @               terceira '.word' é o offset do pino no registrador de dados (serve para apontar a posição no registrador de dados)
 @               quarta '.word' é o offset do registrador de dados do pino (serve para acessar o registrador de dados do pino)
 .data
-        PA7toStartButton:         @ startButton PA7 (GPIO)
+        PA7toStartButton:       @ pino PA7 da GPIO conectado a um botão de apertar (push button) para iniciar a contagem
                 .word 0x0
                 .word 0x1C
                 .word 0x7
                 .word 0x10
-        PA10toPauseButton:        @ pauseButton PA10 (GPIO)
+        PA10toPauseButton:      @ pino PA10 da GPIO conectado a um botão de apertar (push button) para pausar a contagem
                 .word 0x4
                 .word 0x8
                 .word 0xA
                 .word 0x10
-        PA20toResetButton:        @ resetButton PA20 (GPIO)
+        PA20toResetButton:      @ pino PA20 da GPIO conectado a um botão de apertar (push button) para reiniciar a contagem
                 .word 0x8
                 .word 0x10
                 .word 0x14
                 .word 0x10
-        PA8toRedLED:      @ redLED PA8 (GPIO)
+        PA8toRedLED:            @ pino PA8 da GPIO conectado a um LED vermelho
                 .word 0x4
                 .word 0x0
                 .word 0x8
                 .word 0x10
-        PA9toBlueLED:     @ blueLED PA9 (GPIO)
+        PA9toBlueLED:           @ pino PA9 da GPIO conectado a um LED azul
                 .word 0x4
                 .word 0x4
                 .word 0x9
                 .word 0x10        
-        PA18toENABLE: @ PA18 (GPIO) PA18toENABLE (LCD)
+        PA18toENABLE:           @ pino PA18 da GPIO conectado ao terminal ENABLE do LCD
                 .word 0x8
                 .word 0x8
                 .word 0x12
                 .word 0x10
-        PA2toRS:     @ PA2 (GPIO) PA2toRS (LCD)
+        PA2toRS:                @ pino PA2 da GPIO conectado ao terminal RS do LCD
                 .word 0x0
                 .word 0x8
                 .word 0x2
                 .word 0x10
-        PG6toDB6:    @ PG6 (GPIO) PG6toDB6 (LCD)
+        PG6toDB6:               @ pino PG6 da GPIO conectado ao terminal DB6 do LCD
                 .word 0xD8
                 .word 0x18
                 .word 0x6
                 .word 0xE8
-        PG7toDB7:    @ PG7 (GPIO) PG7toDB7 (LCD)
+        PG7toDB7:               @ pino PG7 da GPIO conectado ao terminal DB7 do LCD
                 .word 0xD8
                 .word 0x1C
                 .word 0x7
                 .word 0xE8
-        PG8toDB4:    @ PG8 (GPIO) PG8toDB4 (LCD)
+        PG8toDB4:               @ pino PG8 da GPIO conectado ao terminal DB4 do LCD
                 .word 0xDC
                 .word 0x0
                 .word 0x8
                 .word 0xE8
-        PG9toDB5:    @ PG9 (GPIO) PG9toDB5 (LCD)
+        PG9toDB5:               @ pino PG9 da GPIO conectado ao terminal DB5 do LCD
                 .word 0xDC
                 .word 0x4
                 .word 0x9
@@ -124,14 +129,3 @@ exit:
         oneMILLIsecond: .word 1000000
         zeroMILLIsecond: .word 0
 @ fim do arquivo
-
-@ checkP:
-@         checkButton PA10toPauseButton          @ verifica se o botao de PA10toPauseButton foi pressionado
-@         CMP R1, #0
-@         BEQ pausesIFbuttonISpressed
-@         b checkR
-@ checkR:
-@         checkButton PA20toResetButton          @ verifica se o botao de PA20toResetButton foi pressionado
-@         CMP R1, #0
-@         BEQ resetCountIFbuttonISpressed
-@         b while
