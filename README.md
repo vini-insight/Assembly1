@@ -85,6 +85,8 @@ No projeto foi utilizado o processador Allwinner H3. Suas características bási
     - r14: Link Register (LR)
     - r15: Program Counter (PC)
 
+[<img src="/images/allwinnerH3.jpg" width=115>
+
 ![Screenshot](/images/allwinnerH3.jpg)
     
 
