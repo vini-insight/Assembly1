@@ -120,7 +120,7 @@ exit:
                 .word 0x9
                 .word 0xE8
         fileName: .asciz "/dev/mem"             @ Caminho do arquivo para mapeamento da memória virtual
-        baseAddress: .word 0x1C20               @ Endereco base GPIO / 4096 (encontrado no datasheet do allwinner h3)
+        baseAddress: .word 0x1C20               @ Endereco base GPIO (encontrado no datasheet do allwinner h3) 0x01C20800 / 0x1000 (4096) = 0x1C20 @Endereço base do GPIO / 0x1000
         pageSize: .word 0x1000                  @ tamanho da página virtual
         micro150seconds: .word 150000
         fiveMILLIseconds: .word 5000000
