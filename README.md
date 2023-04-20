@@ -79,22 +79,39 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 
 ### Processador ARM
 
-<pre>
-    <img src="/images/allwinnerH3.jpg" alt="img" style="height: 20%; width: 20%;" align="left">    
-    No projeto foi utilizado o processador Allwinner H3 Quad-core Cortex-A7 de 1.5 GHz.
-    Algumas características básicas são:
-    
-    - Representação em 32 bits
-    - 16 registradores:
-        - r0 até r12: são de uso geral
-        - r13: Stack Pointer (SP)
-        - r14: Link Register (LR)
-        - r15: Program Counter (PC)
-</pre>
+<div>
+    <pre>
+        <img src="/images/allwinnerH3.jpg" alt="img" style="height: 20%; width: 20%;" align="left">    
+        No projeto foi utilizado o processador Allwinner H3 Quad-core Cortex-A7 de 1.5 GHz.
+        Algumas características básicas são:
+
+        - Representação em 32 bits
+        - 16 registradores:
+            - r0 até r12: são de uso geral
+            - r13: Stack Pointer (SP)
+            - r14: Link Register (LR)
+            - r15: Program Counter (PC)
+    </pre>
+</div>
+
+### Orange Pi PC Plus
+
+<div>
+    <p>
+        <img src="/images/Orange Pi PC Plus - Copia.png" alt="img" style="height: 25%; width: 25%;" align="left">    
+        Orange Pi PC Plus é um SBC Single-Board Card computer, ou, computador de cartão de placa única. Tem código aberto e usa arquitetura ARM. Pode executar Ubuntu e outros sistemas operacionais. Orange Pi PC Plus usa Allwinner H3 como CPU. A Orange Pi PC Plus pode ser usada para construir, Um servidor de rede sem fio, jogos, Reprodutor de música e video, entre outros fins. Ela foi projetada para quem deseja usar a tecnologia para criar e inovar.
+    </p>
+</div>
     
 
+
 ### Assembly
-É uma linguagem de programação composta por mnemônicos simples. Ela usa as instruções da arquitetura (ou processador) que estiver sendo usado.
+
+<div>
+    <p>
+        É uma linguagem de programação composta por mnemônicos simples. Ela usa as instruções da arquitetura (ou processador) que estiver sendo usado.
+    </p>
+</div>
 
 ### Lista das instruções utilizadas no projeto   
     
