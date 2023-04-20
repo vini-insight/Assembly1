@@ -18,10 +18,10 @@ pinLOW:
         STR R3, [R8, R2]        @ armazenando o novo valor do registrador de dados na memoria
         BX LR
 
-.macro sleep_by seconds nano_seconds
+.macro sleep seconds nanoSeconds
         mov r7, #162                    @ define r7 como código da chamada do sistema (syscall nanosleep)
         ldr r0, =\seconds               @ define r0 para tempo de espera em segundos
-        ldr r1, =\nano_seconds          @ define r1 para tempo de espera em nano segundos
+        ldr r1, =\nanoSeconds          @ define r1 para tempo de espera em nano segundos
         svc 0                           @ efetua chamada de sistema (syscall)
 .endm
 
@@ -100,3 +100,4 @@ pinLOW:
         LSR R1, R3, R2          @ deslocamento do bit para o LSB
 .endm
 @ fim do arquivo
+
