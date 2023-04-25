@@ -155,7 +155,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 
 <div>
 	<img src="/images/GPIOtoLEDSandBUTTONS subtitles.jpg" alt="img" >
-	<p>Temos também o mapeamento entre a GPIO e os pinos que se conectam aos LEDs (vermelhor e azul) e botões (push buttons) que pode ser visto em detalhes na imagem acima. Os pinos GPIO conectados aos LEDs são configurados como pinos de Saída e os que estão conectados aos botões são configurados como Entrada. Os botões quando pressionados Iniciam, Pausam, e Reinicial a contagem no Display LCD 16x2</p>	
+	<p>Temos também o mapeamento entre a GPIO e os pinos que se conectam aos LEDs (vermelhor e azul) e botões (push buttons) que pode ser visto em detalhes na imagem acima. Os pinos GPIO conectados aos LEDs são configurados como pinos de Saída e os que estão conectados aos botões são configurados como Entrada. Os botões quando pressionados Iniciam, Pausam, e Reinicial a contagem no Display LCD 16x2. Quando a contagem é iniciada, o LED vermelho está desligado. Permanece desligado até o fim da contagem. Nesse momento é ligado durante apenas um segundo e depois é desligado. O LED azul é ligado quando a contagem começa e desliga quando a contagem termina. </p>	
 </div>
 
 
