@@ -4,12 +4,12 @@
 ## Demonstração
 
 
-https://user-images.githubusercontent.com/7541966/232961840-0185417e-be34-4628-bf4e-922c55182c90.mp4
+<!-- https://user-images.githubusercontent.com/7541966/232961840-0185417e-be34-4628-bf4e-922c55182c90.mp4 -->
 
 
 ## Fluxograma
 
-![Screenshot](exportCountdownFlowchart.jpg)
+<!-- ![Screenshot](exportCountdownFlowchart.jpg) -->
 
 referencia: https://app.diagrams.net/ (software utilizado para criar o fluxograma)
 
@@ -119,6 +119,20 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 <p>As interfaces GPIO são geralmente usadas em conjunto com uma placa de prototipação (Protoboard). Protoboards são um tipo de placa de circuito temporária. Você pode prototipar circuitos adicionando, removendo ou movendo componentes eletrônicos. Muitos projetos que envolvem dispositivos como um Orange Pi fazem com que você monte seu dispositivo em uma placa de ensaio e, em seguida, conecte-o aos pinos GPIO usando fios.</p>
 
 <p>Um dispositivo popular que faz uso de pinos GPIO é o Orange Pi. Esses pinos atuam como interruptores que produzem 3,3 volts quando definidos como ALTO e sem tensão quando definidos como BAIXO. Você pode conectar um dispositivo a pinos GPIO específicos e controlá-lo com um programa de software. Por exemplo, você pode conectar um LED a um GPIO e um pino de aterramento em um Orange Pi. Se um programa de software disser ao pino GPIO para ligar, o LED acenderá.</p>
+</div>
+
+### Diagrama de Pinagem do Orange Pi PC Plus v1.2
+
+<div>
+<!-- 	<img src="/images/orangePI PC PLUS pinout diagram.png" alt="img" style="height: 20%; width: 20%;" align="left"> -->
+	<img src="/images/orangePI PC PLUS pinout diagram.png" alt="img" >
+</div>
+
+### Visão Geral do Protótipo
+
+<div>
+	<img src="/images/placa de extensão GPIO.jpg" alt="img" >
+	<p>Utilizamos uma placa de prototipação (protoboard) para reunir todos os componentes eletrônicos do projeto. A Orange PI e sua porta GPIO é conectada usando uma Placa de Extenção que pode ser vista em destaque na imagem acima. Esta placa de Extenção é de uma Raspberry PI, no entanto, sua interface tem a mesma quantidade de pinos da Orange Pi. Por isso, vamos desconsiderar os nomes inscritos originalmente na Placa de Extenção e vamos adotar a nomenclatura oficial do diargrama de Pinagem da Orange pi.</p>
 </div>
 
 ### Assembly
