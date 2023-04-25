@@ -379,7 +379,7 @@ Onde, Rfonte é o registrador que contém o endereço de memória para o qual o 
 A instrução BX alterna o processador para executar código em um endereço de memória especificado pelo valor do registrador Rfonte. Isso é útil para implementar saltos para funções em código de assembly.
 
 
-### Mapeamento de Pinos
+<!-- ### Mapeamento de Pinos
 
 Esta seção apresenta o mapeamento dos pinos de entrada/saída (GPIO) com as conexões do display utilizado no projeto. O mapeamento é essencial para garantir a correta comunicação entre o microcontrolador da GPIO e o display, possibilitando o correto funcionamento da interface de usuário.
 
@@ -404,7 +404,7 @@ O mapeamento apresentado na tabela abaixo é realizado por meio da identificaç�
         | 22   | RS      |
         | 20   | GND(RW) |
 
-Os pinos do microcontrolador estão conectados aos pinos correspondentes do display para que seja possível exibir as informações corretamente.
+Os pinos do microcontrolador estão conectados aos pinos correspondentes do display para que seja possível exibir as informações corretamente. -->
 
 
 ## Testes e Resultados
@@ -418,7 +418,7 @@ Os pinos do microcontrolador estão conectados aos pinos correspondentes do disp
 | :---------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: |
 
 
-# Assembly1
+<!-- # Assembly1
 Assembly1
 
 
@@ -440,4 +440,4 @@ Descrição dos testes de funcionamento do sistema, bem como, análise dos resul
 
 
 Documentação:
-Documentação técnica considerando qualidade da redação (ortografia e gramática), organização dos tópicos, definição do problema, descrição da solução, explicação dos experimentos, análise dos resultados, detalhando os itens não atendidos, se for o caso.
+Documentação técnica considerando qualidade da redação (ortografia e gramática), organização dos tópicos, definição do problema, descrição da solução, explicação dos experimentos, análise dos resultados, detalhando os itens não atendidos, se for o caso. -->
