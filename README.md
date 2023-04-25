@@ -151,6 +151,13 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 	<p>Para o mapeamento, são utilizados os pinos GPIO do microcontrolador, que são configurados como saídas e conectados aos pinos correspondentes no display.</p>
 </div>
 
+### Interface com o Botões e LEDs
+
+<div>
+	<img src="/images/GPIOtoLEDSandBUTTONS subtitles.jpg" alt="img" >
+	<p>Temos também os pinos que se conectam aos LEDs e botões (push buttons) que pode ser visto em detalhes na imagem acima. Os pinos conectados aos LEDs são configurados como pinos de Saída e os que estão conectados aos botões são configurados como Entrada. </p>	
+</div>
+
 
 ### Assembly
 
