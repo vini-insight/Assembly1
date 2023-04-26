@@ -105,7 +105,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 <div>
 	<img src="/images/Pinos GPIO da Orange PI PC plus.jpg" alt="img" style="height: 50%; width: 50%;" align="left">
 	<p>GPIO significa General-Purpose Input/Output, ou, Entrada e Saída de Uso Geral. Uma interface de E/S em placas de circuito.</p>
-	<p>GPIO é diferente dos padrões de porta comuns (como VGA, HDMI, VDI ou USB). Es esses cabos, cada pino conectado dentro da conexão tem uma finalidade definida, que é determinada pelo órgão regulador que criou o padrão.</p>
+	<p>GPIO é diferente dos padrões de porta comuns (como VGA, HDMI, VDI ou USB). Esses cabos, cada pino conectado dentro da conexão tem uma finalidade definida, que é determinada pelo órgão regulador que criou o padrão.</p>
 	<p>A interface GPIO refere-se a um conjunto de pinos. Eles não possui uma função específica, por isso que são chamados de uso geral. Os pino GPIO podem enviar ou receber sinais elétricos que são determinados pelo projetista.</p>
 	<p>Embora a maioria dos pinos de uma porta ou interface tenha uma finalidade específica, como enviar um sinal para um determinado componente, a função de um pino GPIO é personalizável e pode ser controlada por software. O GPIO coloca você no comando do que cada pino realmente faz. Existam diferentes tipos de pinos na matriz GPIO.</p>
 
@@ -119,6 +119,22 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 <p>As interfaces GPIO são geralmente usadas em conjunto com uma placa de prototipação (Protoboard). Protoboards são um tipo de placa de circuito temporária. Você pode prototipar circuitos adicionando, removendo ou movendo componentes eletrônicos. Muitos projetos que envolvem dispositivos como um Orange Pi fazem com que você monte seu dispositivo em uma placa de ensaio e, em seguida, conecte-o aos pinos GPIO usando fios.</p>
 
 <p>Um dispositivo popular que faz uso de pinos GPIO é o Orange Pi. Esses pinos atuam como interruptores que produzem 3,3 volts quando definidos como ALTO e sem tensão quando definidos como BAIXO. Você pode conectar um dispositivo a pinos GPIO específicos e controlá-lo com um programa de software. Por exemplo, você pode conectar um LED a um GPIO e um pino de aterramento em um Orange Pi. Se um programa de software disser ao pino GPIO para ligar, o LED acenderá.</p>
+</div>
+
+### Comando "gpio readall"
+
+<div>
+	<p>Para visualizar a flexibilidade de configuração dos pinos GPIO, abaixo segue um print da configuração padrão, quando a Orange Pi acabou de se ligada e o seu sistema operacional iniciado. Apenas digitamos o comando 'gpio readall' no terminal e vemos a saída abaixo:</p>
+	<br>
+	<img src="/images/Comando gpio readall DefaultSetting.png" alt="img">
+	<br>
+	<br>
+	<p>Observe que a maior parte dos pinos está em modo 'OFF'. No entanto, depois que os pinos GPIO são configurados em linguagem Assembly, executamos novamente no terminal o comando 'gpio readall' e os pinos GPIO são configurados como segue o print abaixo:</p>
+	<br>
+	<img src="/images/Comando gpio readall PersonalSetting.png" alt="img">
+	<br>
+	<br>
+	<p> É necessário destacar que os pinos GPIO que estão conectados a botões são definidos como 'IN' (entrada) e os pinos GPIO que estão conectados aos LEDs e também ao display LCD estão definidos como 'OUT' (saída).</p>
 </div>
 
 ### Diagrama de Pinagem do Orange Pi PC Plus v1.2
