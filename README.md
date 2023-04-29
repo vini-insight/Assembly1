@@ -9,33 +9,10 @@ https://user-images.githubusercontent.com/7541966/232961840-0185417e-be34-4628-b
 
 ## Fluxograma
 
-![Screenshot](exportCountdownFlowchart.jpg)
+<!-- ![Screenshot](exportCountdownFlowchart.jpg) -->
 
-referencia: https://app.diagrams.net/ (software utilizado para criar o fluxograma)
+https://app.diagrams.net/ (software utilizado para criar o fluxograma)
 
-## Tópicos
-
-:small_blue_diamond: [Descrição do Projeto](#descrição-do-projeto-e-requisitos)
-
-:small_blue_diamond: [Ambiente de Desenvolvimento](#ambiente-de-desenvolvimento)
-
-:small_blue_diamond: [Ambiente de Execução](#instalação-configuração-de-ambiente-e-execução)
-
-:small_blue_diamond: [Funcionamento](#funcionamento)
-
-:small_blue_diamond: [Testes e Resultados](#testes-e-resultados)
-
-:small_blue_diamond: [Desenvolvedores](#desenvolvedores)
-
-## Conteúdo
-
-:heavy_check_mark: Códigos detalhadamente comentados;
-
-:heavy_check_mark: Script de compilação tipo Makefile para geração do código executável;
-
-:heavy_check_mark: Detalhamento dos software usados no trabalho, incluindo softwares básicos;
-
-:heavy_check_mark: Arquitetura do computador usado nos testes.
 
 ## Descrição do Projeto e Requisitos
 
@@ -47,23 +24,12 @@ Com o objetivo de desenvolver uma biblioteca para uso futuro em conjunto com um 
 
 O código deve ser escrito em Assembly, permitindo configurar o tempo de contagem e usando botões para controlar início/parada e reinício do temporizador.
 
-## Ambiente de desenvolvimento
+## Ambiente de Desenvolvimento e Testes
 
-### Softwares utilizados para desenvolvimento e testes
+A o código Assembly foi desenvolvido utilizando de editor de texto GNU Nano (https://www.nano-editor.org/) acessado diretamente via terminal de comando da Orange Pi. Também utilizamos o Sublime Text (https://www.sublimetext.com/) presente nos computadores do laboratório. Mas poderiam ser usados qualquer outro editor de texto ou IDE.
 
-A solução foi desenvolvida utilizando de editores de texto. Seja direto na placa ou o disponibilizado pelo próprio sistema operacional.
+Para testes foi utilizado o GDB debug (https://www.sourceware.org/gdb/). É possível usar um osciloscópio ou multímetro para verificar o funcionamento correto dos botões e da contagem de tempo.
 
-### Arquitetura do computador
-
-Os computadores utilizados para desenvolvimento e testes foram os presentes no LEDS.
-
-## Instalação, configuração de ambiente e execução
-
-<>
-
-## Execução e Testes
-
-Para testar o sistema, basta compilar o código e executá-lo na Orange Pi. É possível usar um osciloscópio ou multímetro para verificar o funcionamento correto dos botões e da contagem de tempo.
 
 ## Funcionamento
 
@@ -393,6 +359,51 @@ BX é uma instrução de salto que alterna o processador para executar código e
 Onde, Rfonte é o registrador que contém o endereço de memória para o qual o processador deve saltar.
 
 A instrução BX alterna o processador para executar código em um endereço de memória especificado pelo valor do registrador Rfonte. Isso é útil para implementar saltos para funções em código de assembly.
+
+
+<!-- ========================================================
+
+
+## Tópicos
+
+:small_blue_diamond: [Descrição do Projeto](#descrição-do-projeto-e-requisitos)
+
+:small_blue_diamond: [Ambiente de Desenvolvimento](#ambiente-de-desenvolvimento)
+
+:small_blue_diamond: [Ambiente de Execução](#instalação-configuração-de-ambiente-e-execução)
+
+:small_blue_diamond: [Funcionamento](#funcionamento)
+
+:small_blue_diamond: [Testes e Resultados](#testes-e-resultados)
+
+:small_blue_diamond: [Desenvolvedores](#desenvolvedores)
+
+## Conteúdo
+
+:heavy_check_mark: Códigos detalhadamente comentados;
+
+:heavy_check_mark: Script de compilação tipo Makefile para geração do código executável;
+
+:heavy_check_mark: Detalhamento dos software usados no trabalho, incluindo softwares básicos;
+
+:heavy_check_mark: Arquitetura do computador usado nos testes.
+
+
+
+### Arquitetura do computador
+
+Os computadores utilizados para desenvolvimento e testes foram os presentes no LEDS.
+
+## Instalação, configuração de ambiente e execução
+
+<>
+
+## Execução e Testes
+
+Para testar o sistema, basta compilar o código e executá-lo na Orange Pi. É possível usar um osciloscópio ou multímetro para verificar o funcionamento correto dos botões e da contagem de tempo.
+
+
+======================================================== -->
 
 
 <!-- ### Mapeamento de Pinos
