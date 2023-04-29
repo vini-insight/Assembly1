@@ -28,7 +28,7 @@ O código deve ser escrito em Assembly, permitindo configurar o tempo de contage
 
 A o código Assembly foi desenvolvido utilizando de editor de texto GNU Nano (https://www.nano-editor.org/) acessado diretamente via terminal de comando da Orange Pi. Também utilizamos o Sublime Text (https://www.sublimetext.com/) presente nos computadores do laboratório. Mas poderiam ser usados qualquer outro editor de texto ou IDE.
 
-Para testes foi utilizado o GDB debug (https://www.sourceware.org/gdb/). É possível usar um osciloscópio ou multímetro para verificar o funcionamento correto dos botões e da contagem de tempo.
+Para testes foi utilizado o GDB debug (https://www.sourceware.org/gdb/). Foi utilizado um Multímetro para verificar a continuidade da alguns contatos e confirmar informações do mapeamento dos pino GPIO da Orange Pi conectados aos demais componentes eletrônicos do protótipo. Também é possível usar um Osciloscópio para capturar algum sinal dentro do protótipo.
 
 
 ## Funcionamento
