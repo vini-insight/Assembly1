@@ -9,7 +9,7 @@ https://user-images.githubusercontent.com/7541966/232961840-0185417e-be34-4628-b
 
 ## Fluxograma
 
-<!-- ![Screenshot](exportCountdownFlowchart.jpg) -->
+![Screenshot](exportCountdownFlowchart.jpg)
 
 https://app.diagrams.net/ (software utilizado para criar o fluxograma)
 
@@ -40,31 +40,32 @@ O funcionamento do sistema consiste em: o usuário inicia a contagem pressionand
 O sistema foi desenvolvido para a Orange Pi PC Plus, utilizando a arquitetura ARM v7. Para compilar o código, é necessário usar o utilitário Makefile, que está incluído no projeto.
 
 ### Arquitetura ARM
+
 ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acrônimo de Reduced Instruction Set Computer, ou Computador com um conjunto reduzido de instruções. O que mostra que a arquitetura ARM foi inspirado no RISC, onde o objetivo era desenvolver um hardware simples e também um conjunto pequeno de instruções que garanta tamanho reduzido, velocidade e eficiência no consumo de potência.
 
+### Orange Pi PC Plus
+
+<div>
+	<img src="/images/Orange Pi PC Plus - Copia.png" alt="img" style="height: 20%; width: 20%;" align="right">
+	Orange Pi PC Plus é um SBC Single-Board Card computer, ou, Computador de Cartão de Placa Única.	Tem código aberto e usa arquitetura ARM. Pode executar Ubuntu e outros sistemas operacionais. Orange Pi PC Plus usa Allwinner H3 como CPU. A Orange Pi PC Plus pode ser usada para construir um servidor de rede sem fio, jogos, Reprodutor de música e video, entre outros fins. Ela foi projetada para quem deseja usar a tecnologia para criar e inovar.
+</div>
 
 ### Processador ARM
 
 <div>
 	<img src="/images/allwinnerH3.jpg" alt="img" style="height: 20%; width: 20%;" align="left"> 
 
-    No projeto foi utilizado o processador Allwinner H3 Quad-core Cortex-A7
-    de 1.5 GHz. Algumas características básicas são:	    
+    Alguns detalhes e características do processador Allwinner H3:
+    - Quad-core Cortex-A7
+    - 1.6 GHz
+    - arquitetura ARM v7
     - Representação em 32 bits
     - 16 registradores:
            - r0 até r12: são de uso geral
            - r13: Stack Pointer (SP)
            - r14: Link Register (LR)
            - r15: Program Counter (PC)	
-</div>
-
-### Orange Pi PC Plus
-
-<div>
-	<img src="/images/Orange Pi PC Plus - Copia.png" alt="img" style="height: 20%; width: 20%;" align="right">
-	Orange Pi PC Plus é um SBC Single-Board Card computer, ou, computador de cartão de placa única.	Tem código aberto e usa arquitetura ARM. Pode executar Ubuntu e outros sistemas operacionais. Orange Pi PC Plus usa Allwinner H3 como CPU. A Orange Pi PC Plus pode ser usada para construir um servidor de rede sem fio, jogos, Reprodutor de música e video, entre outros fins. Ela foi projetada para quem deseja usar a tecnologia para criar e inovar.
-</div>
-    
+</div>    
 
 ### GPIO
 
