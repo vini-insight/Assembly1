@@ -9,12 +9,38 @@ https://user-images.githubusercontent.com/7541966/232961840-0185417e-be34-4628-b
 
 ## Fluxograma
 
-![Screenshot](exportCountdownFlowchart.jpg)
+<!-- ![Screenshot](exportCountdownFlowchart.jpg) -->
 
 https://app.diagrams.net/ (software utilizado para criar o fluxograma)
 
 
-## Descrição do Projeto e Requisitos
+# Visão Geral do Protótipo
+
+<div>
+	<img src="/images/visãoGeralTimer.jpg" alt="img" >
+</div>
+
+# Descrição do Projeto e Requisitos
+
+<p>Nos foi apresentado um protótipo (físico e já montado) de um Timer, controlado por botões, com mostrador de contagem no display LCD 16x2. Além de dois LEDs disponívels para serem usados como quisermos. Este Timer é executado e gerenciado através da Orange Pi PC Plus que também já estava acoplada ao protótipo através da interface GPIO.</p>
+
+<p>Usando a linguagem de programação Assembly e algumas instruções do conjunto de instruções da arquitetura ARMv7 (https://developer.arm.com/documentation/ddi0406/latest/), projetamos o software que executa uma contagem regressiva. A contagem é exibida no display LCD 16x2 e é controlada pelos por 3 botões onde se pode iniciar, pausar e reiniciar contagem.</p>
+
+<p>Para isso precisamos antes executar o código que deve estar em uma pasta do sistema de arquivos da Orange Pi. Quando o código é executado, o sistema aguarda o usuário pressionar o botão de iniciar. Nada acontece antes disso. Depois de pressionar o botão de iniciar, a contagem regressiva é iniciada e os valores são exibidos no display.</p>
+	
+<p>Antes de terminar a contagem o usuário pode pausar ou reiniciar a contagem a qualquer momento. Para pausar, deve manter o botão pressionado pelo tempo que quiser que o Timer fique parado. Quando soltar o botão ele continua a contagem do ponto onde estava parado. Para reiniciar a contagem o usuário deve manter o botão de reiniciar pressionado por pelo menos um segundo. Após soltar o botão o Timer volta a contagem para o inicio (valor inicial que estava definido no código).</p>
+
+# Makefile
+
+<p>Um makefile é um arquivo que por padrão é chamado de "Makefile". Nele contém um conjunto de diretivas usadas pela ferramenta de automação de compilação make para gerar um alvo/meta(instalar, desinstalar, remover alguns arquivos e outros). Um makefile contém essencialmente atribuições de variáveis, comentários e regras (“targets”). Comentários são iniciados com o carácter "#".</p>
+
+<p>O objetivo de Makefile é definir regras de compilação para projetos de software. O programa make interpreta o conteúdo do Makefile e executa as regras lá definidas.</p>
+
+<p>O texto contido em um Makefile é usado para a compilação, ligação(linking), montagem de arquivos de projeto entre outras tarefas como limpeza de arquivos temporários, execução de comandos, etc. Vantagens do uso do Makefile:</p>
+
+*   Evita a compilação de arquivos desnecessários. Por exemplo, se seu programa utiliza 120 bibliotecas e você altera apenas uma, o make descobre (comparando as datas de alteração dos arquivos fontes com as dos arquivos anteriormente compilados) qual arquivo foi alterado e compila apenas a biblioteca necessária.
+*   Automatiza tarefas rotineiras como limpeza de vários arquivos criados temporariamente na compilação.
+*   Pode ser usado como linguagem geral de script embora seja mais usado para compilação.
 
 Este projeto consiste em uma solução desenvolvida em Assembly para a Orange Pi PC Plus.
 
@@ -444,6 +470,14 @@ Os pinos do microcontrolador estão conectados aos pinos correspondentes do disp
 
 | [<img src="https://avatars.githubusercontent.com/u/58979991?v=4" width=115><br><sub>Gabriel Carvalho</sub>](https://github.com/GabCarvaS) | [<img src="https://avatars.githubusercontent.com/u/7541966?v=4" width=115><br><sub>Vinicius Vieira</sub>](https://github.com/vini-insight) | [<img src="https://avatars.githubusercontent.com/u/37885125?v=4" width=115><br><sub>Everton Bruno Silva dos Santos</sub>](https://github.com/evertonbrunosds) |
 | :---------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: |
+
+
+### Referências
+
+https://embarcados.com.br/introducao-ao-makefile/
+http://orion.lcg.ufrj.br/compgraf1/downloads/MakefileTut.pdf
+https://terminalroot.com.br/2019/12/como-criar-um-makefile.html#:~:text=Um%20makefile%20%C3%A9%20um%20arquivo,remover%20alguns%20arquivos%20e%20outros).
+https://pt.wikibooks.org/wiki/Programar_em_C/Makefiles
 
 
 <!-- # Assembly1
