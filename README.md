@@ -30,7 +30,9 @@ https://app.diagrams.net/ (software utilizado para criar o fluxograma)
 
 # Funcionamento do Timer
 
-<p>Para iniciar a contagem, é necessário executar o código que deve estar em uma pasta do sistema de arquivos do sistema operacional da Orange Pi. Quando o código é executado, o sistema aguarda o usuário pressionar o botão de iniciar. Nada acontece antes disso. </p>
+<p>Para iniciar a contagem, é necessário executar o código que deve estar em uma pasta do sistema de arquivos do sistema operacional da Orange Pi. Primeiro abrimos o terminal de comandos e navegamos até a pasta onde se encontra os arquivos do projeto. Então digitamos o comando 'make' e pressionamos enter. O terminal vai pedir a senha de super usuário (sudo). Depois de confirmar a senha o código é executado. </p>
+
+<p>Quando o código é executado, o sistema aguarda o usuário pressionar o botão de iniciar. Nada acontece antes disso. </p>
 
 <p>Depois de pressionar o botão de iniciar, a contagem regressiva é iniciada e os valores são exibidos no display. Antes de terminar a contagem o usuário pode pausar ou reiniciar a contagem a qualquer momento.</p>
 	
@@ -99,6 +101,20 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 <p>Quando você pressionar enter, você será solicitado a inserir a senha da conta solicitada. Quando você digitou, nada aparecerá na tela, mas sua senha é, de fato, transmitida. Depois de terminar de digitar, pressione enter mais uma vez. Se sua senha estiver correta, você será saudado com uma janela de terminal remota como na imagem abaixo: </p>
 
 <img src="/images/TERMINAL.png" alt="img" align="center">
+
+## Principais comandos utilizados no terminal
+
+	- ssh {user}@{host}
+	- sudo {senha}
+	- cd / cd ..
+	- cat {nomeArquivo}
+	- nano {nomeArquivo}
+	- mkdir {nome pasta}
+	- rm {nomeArquivo}
+	- echo > {nomeArquivo}
+	- && (para executar dois comandos como por exemplo mkdir novaPasta && cd novaPasta
+	- ls
+	- cat {nomeArquivo} (apenas ver o conteudo do arquivo)
 
 <p> </p>
 
