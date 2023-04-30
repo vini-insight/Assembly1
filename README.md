@@ -106,7 +106,8 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 
 	- ssh {user}@{host}
 	- sudo {senha}
-	- cd / cd ..
+	- cd {nome pasta}
+	- cd .. (volta para pasta anterior)
 	- cat {nomeArquivo}
 	- nano {nomeArquivo}
 	- mkdir {nome pasta}
@@ -115,6 +116,10 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 	- && (para executar dois comandos como por exemplo mkdir novaPasta && cd novaPasta
 	- ls
 	- cat {nomeArquivo} (apenas ver o conteudo do arquivo)
+	- nano {nomeArquivo}
+	- nano (atalhos) CTRL + O (salvar) CTRL + X (fechar editor)
+	- gpio readall
+	- gcc
 
 <p> </p>
 
