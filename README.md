@@ -497,7 +497,7 @@ O funcionamento do sistema consiste em: o usuário inicia a contagem pressionand
 O sistema foi desenvolvido para a Orange Pi PC Plus, utilizando a arquitetura ARM v7. Para compilar o código, é necessário usar o utilitário Makefile, que está incluído no projeto. -->
 
 
-======================================================== -->
+<!-- ======================================================== -->
 
 
 <!-- ### Mapeamento de Pinos
