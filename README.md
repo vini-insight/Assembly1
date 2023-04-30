@@ -119,6 +119,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 	- nano {nomeArquivo}
 	- nano (atalhos) CTRL + O (salvar) CTRL + X (fechar editor)
 	- gpio readall
+	- make {senha}
 	- gcc
 	- gcc t.c && ./t.out
 	- gcc c.c -o c && chmod +x c && ./c
