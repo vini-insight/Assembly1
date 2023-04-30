@@ -423,13 +423,13 @@ Onde, Rfonte é o registrador que contém o endereço de memória para o qual o 
 A instrução BX alterna o processador para executar código em um endereço de memória especificado pelo valor do registrador Rfonte. Isso é útil para implementar saltos para funções em código de assembly.
 
 
-## Desenvolvedores
+# Desenvolvedores
 
 | [<img src="https://avatars.githubusercontent.com/u/58979991?v=4" width=115><br><sub>Gabriel Carvalho</sub>](https://github.com/GabCarvaS) | [<img src="https://avatars.githubusercontent.com/u/7541966?v=4" width=115><br><sub>Vinicius Vieira</sub>](https://github.com/vini-insight) | [<img src="https://avatars.githubusercontent.com/u/37885125?v=4" width=115><br><sub>Everton Bruno Silva dos Santos</sub>](https://github.com/evertonbrunosds) |
 | :---------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: |
 
 
-### Referências
+# Referências
 
 https://embarcados.com.br/introducao-ao-makefile/
 http://orion.lcg.ufrj.br/compgraf1/downloads/MakefileTut.pdf
@@ -528,10 +528,10 @@ O mapeamento apresentado na tabela abaixo é realizado por meio da identificaç�
 Os pinos do microcontrolador estão conectados aos pinos correspondentes do display para que seja possível exibir as informações corretamente. -->
 
 
-## Testes e Resultados
+<!-- ## Testes e Resultados
 
 <>
-
+ -->
 <!-- # Assembly1
 Assembly1
 
