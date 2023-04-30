@@ -44,36 +44,19 @@ https://app.diagrams.net/ (software utilizado para criar o fluxograma)
 
 <p>Um makefile é um arquivo que por padrão é chamado de "Makefile". Nele contém um conjunto de diretivas usadas pela ferramenta de automação de compilação make para gerar um alvo/meta(instalar, desinstalar, remover alguns arquivos e outros). Um makefile contém essencialmente atribuições de variáveis, comentários e regras (“targets”). Comentários são iniciados com o carácter "#".</p>
 
-<p>O objetivo de Makefile é definir regras de compilação para projetos de software. O programa make interpreta o conteúdo do Makefile e executa as regras lá definidas.</p>
-
 <p>O texto contido em um Makefile é usado para a compilação, ligação(linking), montagem de arquivos de projeto entre outras tarefas como limpeza de arquivos temporários, execução de comandos, etc. Vantagens do uso do Makefile:</p>
 
 *   Evita a compilação de arquivos desnecessários. Por exemplo, se seu programa utiliza 120 bibliotecas e você altera apenas uma, o make descobre (comparando as datas de alteração dos arquivos fontes com as dos arquivos anteriormente compilados) qual arquivo foi alterado e compila apenas a biblioteca necessária.
 *   Automatiza tarefas rotineiras como limpeza de vários arquivos criados temporariamente na compilação.
 *   Pode ser usado como linguagem geral de script embora seja mais usado para compilação.
 
-<!-- Este projeto consiste em uma solução desenvolvida em Assembly para a Orange Pi PC Plus. -->
-
-<!-- O objetivo é desenvolver um aplicativo de temporização (timer) que apresente a contagem num display LCD 16x2. O tempo inicial deverá ser configurado diretamente no código. Além disso, deverão ser usados 2 botões de controle: 1 para iniciar/parar a contagem e outro para reiniciar a partir do tempo definido.
-
-Com o objetivo de desenvolver uma biblioteca para uso futuro em conjunto com um programa em linguagem C, a função para enviar mensagem para o display deve estar separada como uma biblioteca (.o), e permitir no mínimo as seguinte operações: Limpar display; Escrever caractere; Posicionar cursor (linha e coluna).
-
-O código deve ser escrito em Assembly, permitindo configurar o tempo de contagem e usando botões para controlar início/parada e reinício do temporizador. -->
+<p>O objetivo de Makefile é definir regras de compilação para projetos de software. O programa make interpreta o conteúdo do Makefile e executa as regras lá definidas.</p>
 
 # Ambiente de Desenvolvimento e Testes
 
 A o código Assembly foi desenvolvido utilizando de editor de texto GNU Nano (https://www.nano-editor.org/) acessado diretamente via terminal de comando da Orange Pi. Também utilizamos o Sublime Text (https://www.sublimetext.com/) presente nos computadores do laboratório. Mas poderiam ser usados qualquer outro editor de texto ou IDE.
 
 Para testes foi utilizado o GDB debug (https://www.sourceware.org/gdb/). Foi utilizado um Multímetro para verificar a continuidade da alguns contatos e confirmar informações do mapeamento dos pino GPIO da Orange Pi conectados aos demais componentes eletrônicos do protótipo. Também é possível usar um Osciloscópio para capturar algum sinal dentro do protótipo.
-
-
-<!-- ## Funcionamento
-
-O funcionamento do sistema consiste em: o usuário inicia a contagem pressionando o botão. Durante a contagem, o usuário pode pausar ou reiniciar o temporizador pressionando os botões correspondentes.
-
-### Arquitetura
-
-O sistema foi desenvolvido para a Orange Pi PC Plus, utilizando a arquitetura ARM v7. Para compilar o código, é necessário usar o utilitário Makefile, que está incluído no projeto. -->
 
 # Arquitetura ARM
 
@@ -223,11 +206,12 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 
 <div>
     <p>
-        É uma linguagem de programação composta por mnemônicos simples. Ela usa as instruções da arquitetura (ou processador) que estiver sendo usado.
+        É uma linguagem de programação composta por mnemônicos simples. Ela usa as instruções da arquitetura (ou processador) que estiver sendo usado. Exemplos da linguagem utilizando algumas instruções do conjunto de instruções da arquitetura ARMv7 podem ser vistos nos arquivos de final '.s' neste projeto.
     </p>
 </div>
 
-## Lista das instruções utilizadas no projeto   
+
+# Lista das instruções Assembly utilizadas no projeto   
     
     
     - ADD                   - CMP                   - SVC                   - AND                   - ORR
@@ -439,6 +423,21 @@ Onde, Rfonte é o registrador que contém o endereço de memória para o qual o 
 A instrução BX alterna o processador para executar código em um endereço de memória especificado pelo valor do registrador Rfonte. Isso é útil para implementar saltos para funções em código de assembly.
 
 
+## Desenvolvedores
+
+| [<img src="https://avatars.githubusercontent.com/u/58979991?v=4" width=115><br><sub>Gabriel Carvalho</sub>](https://github.com/GabCarvaS) | [<img src="https://avatars.githubusercontent.com/u/7541966?v=4" width=115><br><sub>Vinicius Vieira</sub>](https://github.com/vini-insight) | [<img src="https://avatars.githubusercontent.com/u/37885125?v=4" width=115><br><sub>Everton Bruno Silva dos Santos</sub>](https://github.com/evertonbrunosds) |
+| :---------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: |
+
+
+### Referências
+
+https://embarcados.com.br/introducao-ao-makefile/
+http://orion.lcg.ufrj.br/compgraf1/downloads/MakefileTut.pdf
+https://terminalroot.com.br/2019/12/como-criar-um-makefile.html#:~:text=Um%20makefile%20%C3%A9%20um%20arquivo,remover%20alguns%20arquivos%20e%20outros).
+https://pt.wikibooks.org/wiki/Programar_em_C/Makefiles
+https://resultadosdigitais.com.br/marketing/ssh/#:~:text=SSH%20%C3%A9%20a%20sigla%20para,uma%20conex%C3%A3o%20simples%20e%20segura.
+
+
 <!-- ========================================================
 
 
@@ -481,6 +480,23 @@ Os computadores utilizados para desenvolvimento e testes foram os presentes no L
 Para testar o sistema, basta compilar o código e executá-lo na Orange Pi. É possível usar um osciloscópio ou multímetro para verificar o funcionamento correto dos botões e da contagem de tempo.
 
 
+<!-- Este projeto consiste em uma solução desenvolvida em Assembly para a Orange Pi PC Plus. -->
+
+<!-- O objetivo é desenvolver um aplicativo de temporização (timer) que apresente a contagem num display LCD 16x2. O tempo inicial deverá ser configurado diretamente no código. Além disso, deverão ser usados 2 botões de controle: 1 para iniciar/parar a contagem e outro para reiniciar a partir do tempo definido.
+
+Com o objetivo de desenvolver uma biblioteca para uso futuro em conjunto com um programa em linguagem C, a função para enviar mensagem para o display deve estar separada como uma biblioteca (.o), e permitir no mínimo as seguinte operações: Limpar display; Escrever caractere; Posicionar cursor (linha e coluna).
+
+O código deve ser escrito em Assembly, permitindo configurar o tempo de contagem e usando botões para controlar início/parada e reinício do temporizador. -->
+
+<!-- ## Funcionamento
+
+O funcionamento do sistema consiste em: o usuário inicia a contagem pressionando o botão. Durante a contagem, o usuário pode pausar ou reiniciar o temporizador pressionando os botões correspondentes.
+
+### Arquitetura
+
+O sistema foi desenvolvido para a Orange Pi PC Plus, utilizando a arquitetura ARM v7. Para compilar o código, é necessário usar o utilitário Makefile, que está incluído no projeto. -->
+
+
 ======================================================== -->
 
 
@@ -515,21 +531,6 @@ Os pinos do microcontrolador estão conectados aos pinos correspondentes do disp
 ## Testes e Resultados
 
 <>
-
-
-## Desenvolvedores
-
-| [<img src="https://avatars.githubusercontent.com/u/58979991?v=4" width=115><br><sub>Gabriel Carvalho</sub>](https://github.com/GabCarvaS) | [<img src="https://avatars.githubusercontent.com/u/7541966?v=4" width=115><br><sub>Vinicius Vieira</sub>](https://github.com/vini-insight) | [<img src="https://avatars.githubusercontent.com/u/37885125?v=4" width=115><br><sub>Everton Bruno Silva dos Santos</sub>](https://github.com/evertonbrunosds) |
-| :---------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: |
-
-
-### Referências
-
-https://embarcados.com.br/introducao-ao-makefile/
-http://orion.lcg.ufrj.br/compgraf1/downloads/MakefileTut.pdf
-https://terminalroot.com.br/2019/12/como-criar-um-makefile.html#:~:text=Um%20makefile%20%C3%A9%20um%20arquivo,remover%20alguns%20arquivos%20e%20outros).
-https://pt.wikibooks.org/wiki/Programar_em_C/Makefiles
-https://resultadosdigitais.com.br/marketing/ssh/#:~:text=SSH%20%C3%A9%20a%20sigla%20para,uma%20conex%C3%A3o%20simples%20e%20segura.
 
 <!-- # Assembly1
 Assembly1
