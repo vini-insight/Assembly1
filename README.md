@@ -1,13 +1,13 @@
-# Problema #1 – 2023.1 Linguagem Assembly
+# Timer em Linguagem Assembly - Problema #1 – 2023.1 
 
 
-## Demonstração
+# Demonstração
 
 
 https://user-images.githubusercontent.com/7541966/232961840-0185417e-be34-4628-bf4e-922c55182c90.mp4
 
 
-## Fluxograma
+# Fluxograma
 
 ![Screenshot](exportCountdownFlowchart.jpg)
 
@@ -22,13 +22,21 @@ https://app.diagrams.net/ (software utilizado para criar o fluxograma)
 
 # Descrição do Projeto e Requisitos
 
-<p>Nos foi apresentado um protótipo (físico e já montado) de um Timer, controlado por botões, com mostrador de contagem no display LCD 16x2. Além de dois LEDs disponívels para serem usados como quisermos. Este Timer é executado e gerenciado através da Orange Pi PC Plus que também já estava acoplada ao protótipo através da interface GPIO.</p>
+<p>Nos foi apresentado um protótipo (físico e já montado) de um Timer controlado por botões, onde, o usuário pode iniciar, pausar e reiniciar. A contagem é exibida no display LCD 16x2. Além de dois LEDs disponívels para serem usados como quisermos. Este Timer é executado e gerenciado através da Orange Pi PC Plus que também já estava acoplada ao protótipo através da interface GPIO.</p>
 
-<p>Usando a linguagem de programação Assembly e algumas instruções do conjunto de instruções da arquitetura ARMv7 (https://developer.arm.com/documentation/ddi0406/latest/), projetamos o software que executa uma contagem regressiva. A contagem é exibida no display LCD 16x2 e é controlada pelos por 3 botões onde se pode iniciar, pausar e reiniciar contagem.</p>
+<p> Nosso objetivo é desenvolver um software de temporização em Linguagem Assembly para executar e controlar o Timer. Para isto utilizamos algumas instruções do conjunto de instruções da arquitetura ARMv7 (https://developer.arm.com/documentation/ddi0406/latest/).</p>
 
-<p>Para isso precisamos antes executar o código que deve estar em uma pasta do sistema de arquivos da Orange Pi. Quando o código é executado, o sistema aguarda o usuário pressionar o botão de iniciar. Nada acontece antes disso. Depois de pressionar o botão de iniciar, a contagem regressiva é iniciada e os valores são exibidos no display.</p>
+<p> O tempo inicial deverá ser configurado diretamente no código. Para desenvolver uma biblioteca para uso futuro em conjunto com um programa em linguagem C, a função para enviar mensagem para o display deve estar separada como uma biblioteca (.o), e permitir no mínimo as seguinte operações: Limpar display; Escrever caractere; Posicionar cursor (linha e coluna).</p>
+
+# Funcionamento do Timer
+
+<p>Para iniciar a contagem, é necessário executar o código que deve estar em uma pasta do sistema de arquivos do sistema operacional da Orange Pi. Quando o código é executado, o sistema aguarda o usuário pressionar o botão de iniciar. Nada acontece antes disso. </p>
+
+<p>Depois de pressionar o botão de iniciar, a contagem regressiva é iniciada e os valores são exibidos no display. Antes de terminar a contagem o usuário pode pausar ou reiniciar a contagem a qualquer momento.</p>
 	
-<p>Antes de terminar a contagem o usuário pode pausar ou reiniciar a contagem a qualquer momento. Para pausar, deve manter o botão pressionado pelo tempo que quiser que o Timer fique parado. Quando soltar o botão ele continua a contagem do ponto onde estava parado. Para reiniciar a contagem o usuário deve manter o botão de reiniciar pressionado por pelo menos um segundo. Após soltar o botão o Timer volta a contagem para o inicio (valor inicial que estava definido no código).</p>
+<p>Para pausar, deve manter o botão pressionado pelo tempo que quiser que o Timer fique parado. Quando soltar o botão ele continua a contagem do ponto onde estava parado.</p>
+	
+<p>Para reiniciar a contagem o usuário deve manter o botão de reiniciar pressionado por pelo menos um (1) segundo. Após soltar o botão o Timer volta a contagem para o inicio (valor inicial que estava definido no código).</p>
 
 # Makefile
 
@@ -42,41 +50,41 @@ https://app.diagrams.net/ (software utilizado para criar o fluxograma)
 *   Automatiza tarefas rotineiras como limpeza de vários arquivos criados temporariamente na compilação.
 *   Pode ser usado como linguagem geral de script embora seja mais usado para compilação.
 
-Este projeto consiste em uma solução desenvolvida em Assembly para a Orange Pi PC Plus.
+<!-- Este projeto consiste em uma solução desenvolvida em Assembly para a Orange Pi PC Plus. -->
 
-O objetivo é desenvolver um aplicativo de temporização (timer) que apresente a contagem num display LCD 16x2. O tempo inicial deverá ser configurado diretamente no código. Além disso, deverão ser usados 2 botões de controle: 1 para iniciar/parar a contagem e outro para reiniciar a partir do tempo definido.
+<!-- O objetivo é desenvolver um aplicativo de temporização (timer) que apresente a contagem num display LCD 16x2. O tempo inicial deverá ser configurado diretamente no código. Além disso, deverão ser usados 2 botões de controle: 1 para iniciar/parar a contagem e outro para reiniciar a partir do tempo definido.
 
 Com o objetivo de desenvolver uma biblioteca para uso futuro em conjunto com um programa em linguagem C, a função para enviar mensagem para o display deve estar separada como uma biblioteca (.o), e permitir no mínimo as seguinte operações: Limpar display; Escrever caractere; Posicionar cursor (linha e coluna).
 
-O código deve ser escrito em Assembly, permitindo configurar o tempo de contagem e usando botões para controlar início/parada e reinício do temporizador.
+O código deve ser escrito em Assembly, permitindo configurar o tempo de contagem e usando botões para controlar início/parada e reinício do temporizador. -->
 
-## Ambiente de Desenvolvimento e Testes
+# Ambiente de Desenvolvimento e Testes
 
 A o código Assembly foi desenvolvido utilizando de editor de texto GNU Nano (https://www.nano-editor.org/) acessado diretamente via terminal de comando da Orange Pi. Também utilizamos o Sublime Text (https://www.sublimetext.com/) presente nos computadores do laboratório. Mas poderiam ser usados qualquer outro editor de texto ou IDE.
 
 Para testes foi utilizado o GDB debug (https://www.sourceware.org/gdb/). Foi utilizado um Multímetro para verificar a continuidade da alguns contatos e confirmar informações do mapeamento dos pino GPIO da Orange Pi conectados aos demais componentes eletrônicos do protótipo. Também é possível usar um Osciloscópio para capturar algum sinal dentro do protótipo.
 
 
-## Funcionamento
+<!-- ## Funcionamento
 
 O funcionamento do sistema consiste em: o usuário inicia a contagem pressionando o botão. Durante a contagem, o usuário pode pausar ou reiniciar o temporizador pressionando os botões correspondentes.
 
 ### Arquitetura
 
-O sistema foi desenvolvido para a Orange Pi PC Plus, utilizando a arquitetura ARM v7. Para compilar o código, é necessário usar o utilitário Makefile, que está incluído no projeto.
+O sistema foi desenvolvido para a Orange Pi PC Plus, utilizando a arquitetura ARM v7. Para compilar o código, é necessário usar o utilitário Makefile, que está incluído no projeto. -->
 
-### Arquitetura ARM
+# Arquitetura ARM
 
 ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acrônimo de Reduced Instruction Set Computer, ou Computador com um conjunto reduzido de instruções. O que mostra que a arquitetura ARM foi inspirado no RISC, onde o objetivo era desenvolver um hardware simples e também um conjunto pequeno de instruções que garanta tamanho reduzido, velocidade e eficiência no consumo de potência.
 
-### Orange Pi PC Plus
+# Orange Pi PC Plus
 
 <div>
 	<img src="/images/Orange Pi PC Plus - Copia.png" alt="img" style="height: 20%; width: 20%;" align="right">
 	Orange Pi PC Plus é um SBC Single-Board Card computer, ou, Computador de Cartão de Placa Única.	Tem código aberto e usa arquitetura ARM. Pode executar Ubuntu e outros sistemas operacionais. Orange Pi PC Plus usa Allwinner H3 como CPU. A Orange Pi PC Plus pode ser usada para construir um servidor de rede sem fio, jogos, Reprodutor de música e video, entre outros fins. Ela foi projetada para quem deseja usar a tecnologia para criar e inovar.
 </div>
 
-### Processador ARM
+# Processador ARM
 
 <div>
 	<img src="/images/allwinnerH3.jpg" alt="img" style="height: 20%; width: 20%;" align="left"> 
@@ -93,7 +101,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
            - r15: Program Counter (PC)	
 </div>    
 
-### GPIO
+# GPIO
 
 <div>
 	<img src="/images/Pinos GPIO da Orange PI PC plus.jpg" alt="img" style="height: 50%; width: 50%;" align="left">
@@ -114,7 +122,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 <p>Um dispositivo popular que faz uso de pinos GPIO é o Orange Pi. Esses pinos atuam como interruptores que produzem 3,3 volts quando definidos como ALTO e sem tensão quando definidos como BAIXO. Você pode conectar um dispositivo a pinos GPIO específicos e controlá-lo com um programa de software. Por exemplo, você pode conectar um LED a um GPIO e um pino de aterramento em um Orange Pi. Se um programa de software disser ao pino GPIO para ligar, o LED acenderá.</p>
 </div>
 
-### Comando "gpio readall"
+# Comando "gpio readall"
 
 <div>
 	<p>Para visualizar a flexibilidade de configuração dos pinos GPIO, abaixo segue um print da configuração padrão, quando a Orange Pi acabou de se ligada e o seu sistema operacional iniciado. Apenas digitamos o comando 'gpio readall' no terminal e vemos a saída abaixo:</p>
@@ -130,28 +138,28 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 	<p> É necessário destacar que os pinos GPIO que estão conectados a botões são definidos como 'IN' (entrada) e os pinos GPIO que estão conectados aos LEDs e também ao display LCD estão definidos como 'OUT' (saída).</p>
 </div>
 
-### Diagrama de Pinagem do Orange Pi PC Plus v1.2
+# Diagrama de Pinagem do Orange Pi PC Plus v1.2
 
 <div>
 <!-- 	<img src="/images/orangePI PC PLUS pinout diagram.png" alt="img" style="height: 20%; width: 20%;" align="left"> -->
 	<img src="/images/orangePI PC PLUS pinout diagram.png" alt="img" >
 </div>
 
-### Visão Geral do Protótipo
+# Corte detalhado da interface GPIO com os demais componentes
 
 <div>
 	<img src="/images/placa de extensão GPIO.jpg" alt="img" >
 	<p>Utilizamos uma placa de prototipação (protoboard) para reunir todos os componentes eletrônicos do projeto. A Orange PI e sua porta GPIO é conectada usando uma Placa de Extenção que pode ser vista em destaque na imagem acima. Esta placa de Extenção é de uma Raspberry PI, no entanto, sua interface tem a mesma quantidade de pinos da Orange Pi. Por isso, vamos desconsiderar os nomes inscritos originalmente na Placa de Extenção e vamos adotar a nomenclatura oficial do Diagrama de Pinagem da Orange Pi.</p>
 </div>
 
-### Mapeamento dos pinos GPIO
+# Mapeamento dos pinos GPIO
 
 <div>
 	<img src="/images/mapeamentoGPIO.jpg" alt="img" >
 	<p>Esta seção apresenta o mapeamento dos pinos GPIO com as conexões do display (LCD 16x2), botões (push buttons) e LEDs (Vermelho e Azul) utilizados no projeto. O mapeamento é essencial para garantir a correta comunicação entre o Orange PI e os demais componentes, possibilitando funcionamento das interfaces de usuário.</p>
 </div>
 
-### Interface com o Display LCD 16x2
+# Interface GPIO com o Display LCD 16x2
 
 <div>
 	<img src="/images/GPIOtoLCD subtitles.jpg" alt="img" >
@@ -160,7 +168,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 	<p>Para o mapeamento, são utilizados os pinos GPIO do microcontrolador, que são configurados como saídas e conectados aos pinos correspondentes no display.</p>
 </div>
 
-### Interface com o Botões e LEDs
+# Interface GPIO com o Botões e LEDs
 
 <div>
 	<img src="/images/GPIOtoLEDSandBUTTONS subtitles.jpg" alt="img" >
@@ -168,7 +176,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 </div>
 
 
-### Assembly
+# Assembly
 
 <div>
     <p>
@@ -176,7 +184,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
     </p>
 </div>
 
-### Lista das instruções utilizadas no projeto   
+## Lista das instruções utilizadas no projeto   
     
     
     - ADD                   - CMP                   - SVC                   - AND                   - ORR
@@ -185,7 +193,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
     - STR                   - BGT                   - SUB                   - BIC                   - BX
     
 
-### Descrição das instruções
+## Descrição das instruções
 
 ### ADD
 
@@ -262,7 +270,7 @@ A instrução BGT causa um desvio condicional para o rótulo criado. A sintaxe �
 Onde, label é um rótulo criado para marcar onde o programa continuará a execução depois do desvio. GT (greater than) significa maior que. Desvia se o vaor do primeiro registrador for maior do que o valor do segundo registrador.
 
 
-### svc
+### SVC
 
 A instrução SVC (Supervisor Call) é uma instrução usada em sistemas operacionais para fazer chamadas do sistema. A sintaxe é:
 
@@ -271,7 +279,7 @@ A instrução SVC (Supervisor Call) é uma instrução usada em sistemas operaci
 Onde, #valorImediato é um valor imediato que identifica o serviço do sistema a ser chamado. A instrução SVC interrompe a execução do programa e transfere o controle para o sistema operacional, que então lida com a chamada do sistema
 
 
-### pop
+### POP
 
 A instrução POP é usada para retirar valores da pilha. A sintaxe é:
 
@@ -280,7 +288,7 @@ A instrução POP é usada para retirar valores da pilha. A sintaxe é:
 Onde, RlistaReg é uma lista separada por vírgulas de registradores a serem retirados da pilha. A instrução POP é útil para restaurar o estado dos registradores após um salvamento de estado usando a instrução PUSH.
 
 
-### push
+### PUSH
 
 A instrução PUSH é usada para colocar valores na pilha. A sintaxe é:
 
