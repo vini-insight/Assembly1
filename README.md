@@ -206,8 +206,27 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 <p> Datasheet significa ficha ou folha de dados. Normalmente são criadas pelo fabricante do produto ou componente eletrônico. Basicamente é um documento que fornece as especificações de desempenho e outras características. O Datasheet forncesse detalhes suficientes que permitem entender o que é o produto ou componente assim como entender a função do componente no sistema geral. Dependendo da finalidade específica, uma folha de dados pode oferecer um valor médio , um valor típico, uma faixa típica, tolerâncias de engenharia ou um valor nominal . O tipo e a fonte dos dados geralmente são declarados na folha de dados. Uma folha de dados é geralmente usada para comunicação comercial, comunicação técnica para descrever as características de um item ou produto, ou para ajudar a usar os produto.</p>
 
 <p>Datasheets podem ser encontrados no site do fabricante ou em qualquer buscador na internet. Para isso basta digitar "datasheet" + "nome do componente" ou "código do componente". Também existem vários sites que reúnem e compartilham milhares de Datasheets funcionando como verdadeiros repositórios para este tipo de informação. Alguns exemplos são: www.alldatasheet.com OU www.datasheetcatalog.com</p>
+
 </p> Neste projeto vamos utilizar dois Datasheets. Um do processador Allwinner H3 (usado pela Orange Pi) e outro que mostra como usar e configurar o Display LCD 16x2. Uma cópia deles pode ser encontrada aqui mesmo neste projeto acessando a pasta "Datasheets" ou clicando direto nesse link: https://github.com/vini-insight/Assembly1/tree/main/Datasheets </p>
 
+
+## Allwinner H3
+
+<p> O Datasheet do processador forncesse informações do Mapeamento de Memória, do Controle de Portas de Entrada e Saída, além de como se devem configurar os registradores que fazem a gerenciamento do pinos que esta sendo usados na Porta GPIO. Lembrando que a representação é de 32 bits. Lá são detalhados as posições de cada bit e seus respectivos valores para determinadas funções. Basicamente precisamos destas 4 informações abaixo:<p>
+
+	Identificação do Pino
+	valor	offset do registrador de função do pino
+	valor	menor bit da sequencia de 3 bits (o que gera 8 possibilidades de configurações do pino)
+	valor	bits 21:0 (bit correspondente entre 21 e 0) OU bits 13:0 (bit correspondente entre 13 e 0)
+	valor	offset do registrador de dados
+
+</p>
+</p>
+</p>
+</p>
+
+## Display LCD 16x2 
+
 </p>
 </p>
 </p>
@@ -216,7 +235,7 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 </p>
 
 
-# Display LCD 16x2 
+
 
 # Assembly
 
