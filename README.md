@@ -212,13 +212,13 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 
 ## Allwinner H3
 
-<p> O Datasheet do processador forncesse informações do Mapeamento de Memória, do Controle de Portas de Entrada e Saída, além de como se devem configurar os registradores que fazem a gerenciamento do pinos que esta sendo usados na Porta GPIO. Lembrando que a representação é de 32 bits. Lá são detalhados as posições de cada bit e seus respectivos valores para determinadas funções. Basicamente precisamos destas 4 informações abaixo:<p>
+<p> O Datasheet do processador forncesse informações do Mapeamento de Memória, do Controle de Portas de Entrada e Saída, além de como se devem configurar os registradores que fazem a gerenciamento do pinos que esta sendo usados na Porta GPIO. Lembrando que a representação é de 32 bits. Lá são detalhados as posições de cada bit e seus respectivos valores para determinadas funções. Basicamente precisamos saber as informações abaixo para cada pino utilizado:<p>
 
 	Identificação do Pino
-	valor	offset do registrador de função do pino
-	valor	menor bit da sequencia de 3 bits (o que gera 8 possibilidades de configurações do pino)
-	valor	bits 21:0 (bit correspondente entre 21 e 0) OU bits 13:0 (bit correspondente entre 13 e 0)
-	valor	offset do registrador de dados
+	Valor do offset do registrador de função do pino;
+	Valor do menor bit da sequencia de 3 bits (o que gera 8 possibilidades de configurações do pino);
+	Valor do bit correspondente entre a sequencia de bits 21:0 (21 até 0) para os pinos PAs, OU, 13:0 (13 até 0) para os pinos PGs;
+	Valor do offset do registrador de dados;
 
 </p>
 </p>
