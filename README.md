@@ -227,8 +227,66 @@ ARM significa Advanced RISC Machines, ou Máquinas RISC Avançadas. RISC é acr�
 
 ## Display LCD 16x2 
 
-</p>
-</p>
+<img src="/images/LCD 16x2 myPinout.jpg" alt="img" >
+
+<!-- <div> -->
+	
+<p>O LCD 16 × 2 é chamado assim porque; tem 16 colunas e 2 linhas. Existem muitas combinações disponíveis, como 8×1, 8×2, 10×2, 16×1, etc. Mas a mais usada é a LCD 16x2. Todos os visores LCD mencionados acima terão 16 pinos e a abordagem de programação também é a mesma.</p>
+	
+<p>O LCD é matricial de 16*2 pontos e assim terá (16*2=32) 32 caracteres no total e cada caractere será feito de 5*8 pontos de pixel. Agora, sabemos que cada caractere tem (5*8=40) 40 pixels e para 32 caracteres teremos (32*40) 1280 pixels. Além disso, o LCD também deve ser instruído sobre a posição dos pixels.</p>
+	
+<p>IC de interface como o HD44780 , que é montado no próprio módulo LCD. A função deste IC é obter os comandos e dados do MCU e processá-los para exibir informações significativas em nossa tela LCD.</p>
+<!-- </div> -->
+
+### Comandos LCD:
+
+<p>Existem algumas instruções de comandos predefinidos no LCD, que precisamos enviar para o LCD através de algum microcontrolador. Algumas instruções de comando importantes são dadas abaixo:</p>
+
+<div>
+	<img src="/images/5x8.jpg" alt="img" align="right">
+	
+	Código hexadecimal | Comando para registro de instrução LCD
+
+	0F | LCD LIGADO, cursor LIGADO
+	01 | Limpar tela de exibição
+	02 | voltar para casa
+	04 | Diminuir o cursor (deslocar o cursor para a esquerda)
+	06 | Incrementar o cursor (deslocar o cursor para a direita)
+	05 | Deslocar exibição para a direita
+	07 | Deslocar exibição para a esquerda
+	0E | Visor LIGADO, cursor piscando
+	80 | Forçar o cursor para o início da primeira linha
+	C0 | Forçar o cursor para o início da segunda linha
+	38 | 2 linhas e matriz 5×7
+	83 | Cursor linha 1 posição 3
+	3C | ativar segunda linha
+	08 | Visor DESLIGADO, cursor DESLIGADO
+	C1 | Ir para a segunda linha, posição 1
+	OC | Visor LIGADO, cursor DESLIGADO
+	C1 | Ir para a segunda linha, posição 1
+	C2 | Ir para a segunda linha, posição 2
+
+</div>
+
+### Modo de operação do LCD em 4 bits e em 8 bits:
+
+<p>O LCD pode funcionar em dois modos diferentes, nomeadamente o modo de 4 bits e o modo de 8 bits. No modo de 4 bits, enviamos os dados nibble por nibble, primeiro nibble superior e depois nibble inferior. Para aqueles que não sabem o que é um nibble: um nibble é um grupo de quatro bits, então os quatro bits inferiores (D0-D3) de um byte formam o nibble inferior enquanto os quatro bits superiores (D4-D7) de um byte formam o nibble superior. Isso nos permite enviar dados de 8 bits.</p>
+
+<p>Enquanto no modo de 8 bits, podemos enviar os dados de 8 bits diretamente de uma vez, pois usamos todas as 8 linhas de dados.</p>
+
+<p>O modo de 8 bits é mais rápido e sem falhas do que o modo de 4 bits. Mas a principal desvantagem é que ele precisa de 8 linhas de dados conectadas ao microcontrolador. Isso fará com que fiquemos sem pinos de E/S em nosso MCU, então o modo de 4 bits é amplamente usado. Nenhum pino de controle é usado para definir esses modos. É apenas a maneira de programar essa mudança.</p>
+
+<img src="/images/howTOuseLCD16x2.jpg" alt="img" >
+
+<p>Modo de leitura e gravação do LCD:</p>
+
+<p>Como dito, o próprio LCD consiste em um IC de interface. O MCU pode ler ou gravar neste IC de interface. Na maioria das vezes estaremos apenas escrevendo para o IC, pois a leitura o tornará mais complexo e tais cenários são muito raros. Informações como posição do cursor, interrupções de conclusão de status etc.</p>
+
+<p> Mais detalhes de como usar e operar o Display LCD 16x2 podem ser consultados no seu datasheet https://github.com/vini-insight/Assembly1/tree/main/Datasheets</p>
+
+
+
+
 </p>
 </p>
 </p>
